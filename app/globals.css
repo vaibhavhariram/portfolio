@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base */
+  --bg-primary: #0a0a0f;
+  --bg-card: #111116;
+  --bg-elevated: #1a1a1f;
+  --border: #2a2a2f;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #6b6b6b;
+
+  /* Map */
+  --map-lines: rgba(255, 255, 255, 0.6);
+
+  /* Pin Categories */
+  --pin-projects: #3b82f6;
+  --pin-research: #14b8a6;
+  --pin-education: #a855f7;
+  --pin-personal: #f59e0b;
+  --pin-travel: #22c55e;
+  --pin-bucket: #ffffff;
+  --pin-interests: #ec4899;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-card: var(--bg-card);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-serif: var(--font-newsreader);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Custom scrollbar for cards */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Map line draw animation */
+.map-path {
+  stroke-dasharray: 10000;
+  stroke-dashoffset: 10000;
+  animation: draw 2.5s ease-out forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Featured pin pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px var(--pulse-color, #3b82f6);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--pulse-color, #3b82f6), 0 0 30px var(--pulse-color, #3b82f6);
+  }
+}
+
+.featured-pin {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .map-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  
+  .featured-pin {
+    animation: none;
+  }
 }
