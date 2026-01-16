@@ -4,25 +4,39 @@ import { motion, AnimatePresence, useMotionValue, useTransform, PanInfo } from '
 import { X, ExternalLink } from 'lucide-react';
 import { Pin, categoryColors } from '@/data/pins';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useSyncExternalStore } from 'react';
 
 interface ContentCardProps {
   pin: Pin | null;
   onClose: () => void;
 }
 
+// SSR-safe media query hook that avoids hydration mismatch
+function useMediaQuery(query: string): boolean {
+  const subscribe = (callback: () => void) => {
+    const mediaQuery = window.matchMedia(query);
+    mediaQuery.addEventListener('change', callback);
+    return () => mediaQuery.removeEventListener('change', callback);
+  };
+  
+  const getSnapshot = () => window.matchMedia(query).matches;
+  
+  // Return false on server, actual value on client
+  const getServerSnapshot = () => false;
+  
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+}
+
 export default function ContentCard({ pin, onClose }: ContentCardProps) {
   const color = pin ? categoryColors[pin.category] : '#3b82f6';
-  const [isMobile, setIsMobile] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 639px)');
   
   const y = useMotionValue(0);
   const opacity = useTransform(y, [0, 300], [1, 0]);
   
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    setHasMounted(true);
   }, []);
   
   const handleDragEnd = (_: unknown, info: PanInfo) => {
@@ -30,6 +44,11 @@ export default function ContentCard({ pin, onClose }: ContentCardProps) {
       onClose();
     }
   };
+  
+  // Don't render until mounted to avoid animation flash
+  if (!hasMounted) {
+    return null;
+  }
   
   return (
     <AnimatePresence>
@@ -48,6 +67,7 @@ export default function ContentCard({ pin, onClose }: ContentCardProps) {
           
           {/* Card */}
           <motion.aside
+            key={isMobile ? 'mobile' : 'desktop'}
             initial={isMobile ? { y: '100%' } : { x: '100%' }}
             animate={isMobile ? { y: 0 } : { x: 0 }}
             exit={isMobile ? { y: '100%' } : { x: '100%' }}
