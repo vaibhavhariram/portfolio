@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Pin as PinType, categoryColors } from '@/data/pins';
+import { MAP_DIMENSIONS } from '@/utils/mapProjection';
 
 interface PinProps {
   pin: PinType;
@@ -57,8 +58,8 @@ export default function Pin({
         ${isSelected ? 'ring-2 ring-white ring-offset-2 ring-offset-[#0a0a0f]' : ''}
       `}
       style={{
-        left: `${(position.x / 1009.6727) * 100}%`,
-        top: `${(position.y / 665.96301) * 100}%`,
+        left: `${(position.x / MAP_DIMENSIONS.width) * 100}%`,
+        top: `${(position.y / MAP_DIMENSIONS.height) * 100}%`,
         transform: 'translate(-50%, -50%)',
         backgroundColor: isBucket ? 'transparent' : color,
         boxShadow: isBucket ? 'none' : `0 0 8px ${color}`,

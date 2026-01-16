@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Pin, categoryColors } from '@/data/pins';
+import { MAP_DIMENSIONS } from '@/utils/mapProjection';
 
 interface PinTooltipProps {
   pin: Pin | null;
@@ -12,12 +13,11 @@ interface PinTooltipProps {
 export default function PinTooltip({ pin, position, containerRef }: PinTooltipProps) {
   if (!pin || !position || !containerRef.current) return null;
 
-  const containerRect = containerRef.current.getBoundingClientRect();
   const color = categoryColors[pin.category];
   
   // Calculate position as percentage
-  const xPercent = (position.x / 1009.6727) * 100;
-  const yPercent = (position.y / 665.96301) * 100;
+  const xPercent = (position.x / MAP_DIMENSIONS.width) * 100;
+  const yPercent = (position.y / MAP_DIMENSIONS.height) * 100;
   
   // Determine if tooltip should appear above or below, left or right
   const showAbove = yPercent > 30;
