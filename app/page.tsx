@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <main className="relative w-screen h-screen overflow-hidden bg-[#0a0a0f]">
       {/* Header */}
-      <Header hasInteracted={hasInteracted} />
+      <Header hasInteracted={hasInteracted} isMapLoaded={isMapLoaded} />
       
       {/* Utility Links */}
       <UtilityLinks />
