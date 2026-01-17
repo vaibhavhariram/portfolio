@@ -67,10 +67,10 @@ export default function ContentCard({ pin, onClose }: ContentCardProps) {
           
           {/* Card */}
           <motion.aside
-            key={isMobile ? 'mobile' : 'desktop'}
-            initial={isMobile ? { y: '100%' } : { x: '100%' }}
-            animate={isMobile ? { y: 0 } : { x: 0 }}
-            exit={isMobile ? { y: '100%' } : { x: '100%' }}
+            key={pin.id}
+            initial={isMobile ? { y: '100%', x: 0 } : { x: '100%', y: 0 }}
+            animate={{ x: 0, y: 0 }}
+            exit={isMobile ? { y: '100%', x: 0 } : { x: '100%', y: 0 }}
             transition={{ type: 'tween', duration: 0.3, ease: 'easeOut' }}
             drag={isMobile ? 'y' : false}
             dragConstraints={{ top: 0, bottom: 0 }}
