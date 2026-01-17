@@ -29,9 +29,9 @@ export default function Header({ hasInteracted }: HeaderProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: hasInteracted ? 0 : 1 }}
         transition={{ duration: 0.5, delay: hasInteracted ? 0 : 1 }}
-        className="mt-3 md:mt-4 hidden md:block"
+        className="mt-4 hidden md:block"
       >
-        <p className="text-xs text-[#6b6b6b] italic">
+        <p className="text-[13px] text-[#6b6b6b] italic leading-relaxed">
           Welcome to the map of my life.
           <br />
           Click a pin to start exploring.
