@@ -55,7 +55,7 @@ export default function UtilityLinks() {
             rel={link.download ? undefined : 'noopener noreferrer'}
             className="
               block p-2
-              text-white/60 
+              text-white/70 
               hover:text-white 
               transition-colors duration-200
             "
