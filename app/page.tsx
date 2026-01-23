@@ -62,36 +62,49 @@ export default function Home() {
         ref={mapContainerRef}
         className="absolute inset-0 flex items-center justify-center p-4 pt-32 pb-20 md:p-16"
       >
-        <div className="relative w-full h-full max-w-[1400px] max-h-[900px]">
-          {/* World Map SVG */}
-          <WorldMap onMapLoaded={handleMapLoaded} />
-          
-          {/* Pins Layer */}
-          <div className="absolute inset-0">
-            {pins.map((pin, index) => {
-              const position = latLngToPixel(pin.coordinates.lat, pin.coordinates.lng);
-              return (
-                <Pin
-                  key={pin.id}
-                  pin={pin}
-                  position={position}
-                  index={index}
-                  isMapLoaded={isMapLoaded}
-                  isSelected={selectedPin?.id === pin.id}
-                  onHoverStart={() => handlePinHoverStart(pin, position)}
-                  onHoverEnd={handlePinHoverEnd}
-                  onClick={() => handlePinClick(pin)}
-                />
-              );
-            })}
+        {/* Aspect ratio container matching SVG viewBox (2000:857) */}
+        <div 
+          className="relative w-full h-full flex items-center justify-center"
+          style={{ maxWidth: '1400px', maxHeight: '600px' }}
+        >
+          <div 
+            className="relative w-full"
+            style={{ 
+              aspectRatio: '2000 / 857',
+              maxHeight: '100%',
+              maxWidth: '100%'
+            }}
+          >
+            {/* World Map SVG */}
+            <WorldMap onMapLoaded={handleMapLoaded} />
+            
+            {/* Pins Layer - now correctly aligned with SVG */}
+            <div className="absolute inset-0">
+              {pins.map((pin, index) => {
+                const position = latLngToPixel(pin.coordinates.lat, pin.coordinates.lng);
+                return (
+                  <Pin
+                    key={pin.id}
+                    pin={pin}
+                    position={position}
+                    index={index}
+                    isMapLoaded={isMapLoaded}
+                    isSelected={selectedPin?.id === pin.id}
+                    onHoverStart={() => handlePinHoverStart(pin, position)}
+                    onHoverEnd={handlePinHoverEnd}
+                    onClick={() => handlePinClick(pin)}
+                  />
+                );
+              })}
+            </div>
+            
+            {/* Tooltip */}
+            <PinTooltip 
+              pin={hoveredPin} 
+              position={hoveredPosition} 
+              containerRef={mapContainerRef}
+            />
           </div>
-          
-          {/* Tooltip */}
-          <PinTooltip 
-            pin={hoveredPin} 
-            position={hoveredPosition} 
-            containerRef={mapContainerRef}
-          />
         </div>
       </div>
       

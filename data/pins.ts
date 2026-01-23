@@ -55,9 +55,9 @@ export const pins: Pin[] = [
     id: 'bay-area-projects',
     location: 'San Francisco Bay Area',
     coordinates: {
-      lat: 37.5485,
-      lng: -121.9886,
-      display: "37.5485°N, 121.9886°W"
+      lat: 37.4419,
+      lng: -122.1430,
+      display: "37.4419°N, 122.1430°W"
     },
     category: 'projects',
     title: 'CampusFlow & Elytra',
@@ -184,9 +184,9 @@ export const pins: Pin[] = [
     id: 'antarctica',
     location: 'Antarctica',
     coordinates: {
-      lat: -82.8628,
-      lng: 135.0000,
-      display: "82.8628°S, 135.0000°E"
+      lat: -72.0,
+      lng: 0.0,
+      display: "72.0000°S, 0.0000°E"
     },
     category: 'travel',
     title: 'Antarctica',
@@ -242,9 +242,9 @@ export const pins: Pin[] = [
     id: 'london',
     location: 'London, UK',
     coordinates: {
-      lat: 51.4817,
-      lng: -0.1910,
-      display: "51.4817°N, 0.1910°W"
+      lat: 51.5074,
+      lng: -0.1278,
+      display: "51.5074°N, 0.1278°W"
     },
     category: 'interests',
     title: 'Chelsea FC',
