@@ -19,15 +19,15 @@ export default function Legend() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.9 }}
-      className="fixed bottom-6 left-6 z-20 flex flex-wrap gap-x-4 gap-y-2 text-xs max-w-[400px]"
+      className="fixed bottom-6 left-6 z-20 flex flex-wrap gap-x-5 gap-y-3 text-[14px] max-w-[450px]"
     >
       {categories.map((category) => (
         <span
           key={category}
-          className="flex items-center gap-1.5 text-[#a0a0a0]"
+          className="flex items-center gap-2 text-white"
         >
           <span
-            className="w-2 h-2 rounded-full flex-shrink-0"
+            className="w-[10px] h-[10px] rounded-full flex-shrink-0"
             style={{
               backgroundColor: category === 'bucket' ? 'transparent' : categoryColors[category],
               border: category === 'bucket' ? '1.5px solid white' : 'none',

@@ -9,20 +9,17 @@ interface HeaderProps {
 
 export default function Header({ hasInteracted, isMapLoaded }: HeaderProps) {
   return (
-    <header className="fixed top-4 left-4 md:top-6 md:left-6 z-20 max-w-[calc(100%-120px)] md:max-w-md">
+    <header className="fixed top-4 left-4 md:top-6 md:left-6 z-20 max-w-[calc(100%-120px)] md:max-w-lg">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={isMapLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-xl md:text-2xl font-bold font-[family-name:var(--font-newsreader)] tracking-tight">
+        <h1 className="text-[28px] md:text-[32px] font-bold font-[family-name:var(--font-newsreader)] tracking-tight text-white">
           VAIBHAV HARIRAM
         </h1>
-        <p className="text-xs md:text-sm text-[#a0a0a0] mt-1">
-          UC Berkeley CS & Geography &apos;28 · Geospatial AI/ML
-        </p>
-        <p className="text-xs md:text-sm text-[#a0a0a0] hidden md:block">
-          Building AI for cities, intelligence for the physical world
+        <p className="text-[14px] md:text-[16px] text-white mt-1 font-[family-name:var(--font-space-grotesk)]">
+          CS @ UC Berkeley · Geospatial AI/ML · Building AI for cities, intelligence for the physical world
         </p>
       </motion.div>
       
@@ -32,12 +29,10 @@ export default function Header({ hasInteracted, isMapLoaded }: HeaderProps) {
         transition={{ duration: 0.5, delay: isMapLoaded && !hasInteracted ? 0.3 : 0 }}
         className="mt-4 hidden md:block"
       >
-        <p className="text-[13px] text-[#6b6b6b] italic leading-relaxed">
-          Welcome to the map of my life.
-          <br />
-          Click a pin to start exploring.
+        <p className="text-[15px] text-white font-[family-name:var(--font-space-grotesk)] leading-relaxed">
+          Welcome to the map of my life. Click a pin to start exploring.
         </p>
-        <p className="text-[10px] text-[#4a4a4a] mt-2">
+        <p className="text-[12px] text-white mt-2 font-[family-name:var(--font-space-grotesk)]">
           this is my portfolio and personal website
         </p>
       </motion.div>
