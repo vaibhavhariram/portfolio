@@ -74,11 +74,27 @@ body {
   background: var(--text-muted);
 }
 
+/* World map container */
+.world-map-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Map path styling - white stroke, no fill */
+.world-map-container path,
+.map-path {
+  fill: none !important;
+  stroke: rgba(255, 255, 255, 0.6) !important;
+  stroke-width: 0.8px !important;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
 /* Map line draw animation */
 .map-path {
-  stroke-dasharray: 10000;
-  stroke-dashoffset: 10000;
-  animation: draw 2.5s ease-out forwards;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: draw 2s ease-out forwards;
 }
 
 @keyframes draw {
