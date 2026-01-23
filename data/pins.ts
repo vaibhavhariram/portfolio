@@ -184,9 +184,9 @@ export const pins: Pin[] = [
     id: 'antarctica',
     location: 'Antarctica',
     coordinates: {
-      lat: -72.0,
+      lat: -58.0,
       lng: 0.0,
-      display: "72.0000°S, 0.0000°E"
+      display: "58.0000°S, 0.0000°E"
     },
     category: 'travel',
     title: 'Antarctica',

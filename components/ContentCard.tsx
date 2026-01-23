@@ -122,7 +122,7 @@ export default function ContentCard({ pin, onClose }: ContentCardProps) {
             <div className="p-6 pt-4 sm:pt-8">
               <h1 
                 id="card-title"
-                className="text-xl sm:text-2xl font-bold font-[family-name:var(--font-newsreader)] pr-12"
+                className="text-xl sm:text-2xl font-bold pr-12"
               >
                 {pin.title}
               </h1>

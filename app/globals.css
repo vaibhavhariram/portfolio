@@ -53,7 +53,7 @@ html, body {
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
 }
 
 /* Custom scrollbar for cards */

@@ -44,7 +44,7 @@ export default function MobileListView({ isOpen, onClose, onPinSelect }: MobileL
         >
           {/* Header */}
           <div className="sticky top-0 z-10 bg-[#0a0a0f] border-b border-[#2a2a2f] p-4 flex items-center justify-between">
-            <h2 className="text-lg font-bold font-[family-name:var(--font-newsreader)]">
+            <h2 className="text-lg font-bold">
               Explore
             </h2>
             <button
