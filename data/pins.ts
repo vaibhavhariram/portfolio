@@ -190,8 +190,8 @@ export const pins: Pin[] = [
     },
     category: 'travel',
     title: 'Antarctica',
-    subtitle: 'Recent Adventure',
-    description: '[PLACEHOLDER: Your Antarctica trip - when, why, highlights, photos, what you learned.]',
+    subtitle: 'winter 2025. once in a lifetime experience.',
+    description: '',
     heroImage: '/images/travel/antarctica.jpg',
   },
   {
@@ -205,7 +205,7 @@ export const pins: Pin[] = [
     category: 'travel',
     title: 'Prague',
     subtitle: 'Recent Travel',
-    description: '[PLACEHOLDER: Prague trip details, experiences, favorite spots.]',
+    description: 'traveled to prague in summer 2024. coolest city ever.',
     heroImage: '/images/travel/prague.jpg',
   },
   {
@@ -228,15 +228,15 @@ export const pins: Pin[] = [
     id: 'chicago',
     location: 'Chicago, IL',
     coordinates: {
-      lat: 41.8781,
-      lng: -87.6298,
+      lat: 43.8781,
+      lng: -86.6298,
       display: "41.8781°N, 87.6298°W"
     },
     category: 'interests',
-    title: 'Chicago Bulls & Bears',
+    title: 'Chicago Sports',
     subtitle: 'Sports',
-    description: '[PLACEHOLDER: Why you love Chicago sports - Bulls history, Bears fandom, favorite players, memories.]',
-    heroImage: '/images/interests/chicago-sports.jpg',
+    description: 'grew up a big bulls and bears fan. soldier field and united center have unmatched energy. waiting for the next d-rose, my rome odunze jersey, and maybe a underdog championship run.',
+    heroImage: '',
   },
   {
     id: 'london',
@@ -249,7 +249,7 @@ export const pins: Pin[] = [
     category: 'interests',
     title: 'Chelsea FC',
     subtitle: 'Football',
-    description: '[PLACEHOLDER: Chelsea fandom - how you became a fan, favorite moments, players.]',
+    description: 'former home, stil my spiritual abode. up the chels! here is a picture of me attending a friendly game in charlotte!]',
     heroImage: '/images/interests/chelsea.jpg',
   },
   {
@@ -261,9 +261,9 @@ export const pins: Pin[] = [
       display: "40.7128°N, 74.0060°W"
     },
     category: 'interests',
-    title: 'How I Met Your Mother',
-    subtitle: 'Favorite TV Show',
-    description: '[PLACEHOLDER: Why HIMYM is your favorite show, favorite episodes, how it influenced you.]',
+    title: 'my connection to the big apple',
+    subtitle: 'what does new york mean to me?',
+    description: 'from my favorite TV show (How I Met Your Mother) to the dosa guy in central park and everywhere from broadway to brooklyn and everything in between- i need to spend my 20s here.',
     heroImage: '/images/interests/himym.jpg',
   },
   {
@@ -276,7 +276,7 @@ export const pins: Pin[] = [
     },
     category: 'interests',
     title: 'Anime',
-    subtitle: 'Favorite Medium',
+    subtitle: 'niche i was into ',
     description: '[PLACEHOLDER: Your relationship with anime - favorites, recommendations, what draws you to it.]',
     heroImage: '/images/interests/anime.jpg',
   },

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface HeaderProps {
   hasInteracted: boolean;
@@ -30,10 +31,14 @@ export default function Header({ hasInteracted, isMapLoaded }: HeaderProps) {
         className="mt-6 hidden md:block"
       >
         <p className="text-[14px] md:text-[16px] text-[#d0d0d0] leading-relaxed">
-          welcome to the map of my life. click a pin to start exploring.
-        </p>
-        <p className="text-[14px] md:text-[16px] text-[#d0d0d0] mt-2">
-          this is my portfolio and personal website
+          click a pin to start exploring. or{' '}
+          <Link 
+            href="/traditional" 
+            className="underline underline-offset-2 hover:text-white transition-colors"
+          >
+            click here for a traditional viewing experience
+          </Link>
+          .
         </p>
       </motion.div>
     </header>
