@@ -18,9 +18,6 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
             Vaibhav Hariram
           </h1>
-          <p className="text-sm text-[var(--text-secondary)]">
-            cs @ uc berkeley · minor in urban/city planning · geospatial ai/ml
-          </p>
         </section>
 
         {/* Contact / directory */}
@@ -34,6 +31,14 @@ export default function Home() {
               className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
             >
               email
+            </Link>
+            <Link
+              href="https://x.com/vaibhavhariram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+            >
+              x
             </Link>
             <Link
               href="https://github.com/vaibhavhariram"
@@ -75,13 +80,32 @@ export default function Home() {
             </li>
             <li>
               software engineering intern at{' '}
-              <span className="text-[var(--text-primary)]">Railinc</span>, working on gis-driven
-              tools for freight rail operations and terminal workflows.
+              <Link
+                href="https://public.railinc.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                Railinc
+              </Link>
+              , working on gis-driven tools for freight rail operations and terminal workflows.
             </li>
             <li>
               b.a. computer science @{' '}
-              <span className="text-[var(--text-primary)]">uc berkeley</span> with a minor in
-              urban/city planning (gpa 3.9).
+              <Link
+                href="https://www.reddit.com/r/ApplyingToCollege/comments/fq8esl/make_me_hate_stanford_why_stanford_is_overrated/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                uc berkeley
+              </Link>
+              {' '}with a minor in urban/city planning (gpa 3.9).
+            </li>
+            <li>
+              project manager @ ucb eecs, lead researcher on a team using multi-spectral satellite
+              imagery (ndvi, ndwi, lst) to detect crypto mining developments in el salvador (potts
+              lab, berkeley).
             </li>
           </ul>
         </section>
@@ -102,10 +126,47 @@ export default function Home() {
               visualization platform combining live fire perimeters, winds, and population density
               to surface high-risk evacuation corridors.
             </li>
+          </ul>
+        </section>
+
+        {/* Lore / fun facts */}
+        <section className="space-y-3">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            lore
+          </p>
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
-              <span className="text-[var(--text-primary)]">Crypto Mining Detection</span> — ml
-              model using multi-spectral satellite imagery (ndvi, ndwi, lst) to detect crypto mining
-              developments in el salvador (potts lab, berkeley).
+              memorized every world capital at age 2. mass applause from indian aunties. zero
+              practical applications since.
+            </li>
+            <li>
+              represented team usa at the 2024 international geography olympiad. we got third. i
+              peaked at 19.
+            </li>
+            <li>
+              once chased my bag on a{' '}
+              <Link
+                href="https://www.caltrain.com/rider-information/lost-and-found"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                caltrain
+              </Link>
+              {' '}from redwood city to sf in a $100 uber going 100mph. got it back with 30 seconds
+              to spare.
+            </li>
+            <li>
+              grew up in{' '}
+              <Link
+                href="https://www.google.com/maps/place/Cary,+NC/@35.7701064,-78.9141316,9907m/data=!3m1!1e3!4m6!3m5!1s0x89acbd54ff4a8b43:0x44568fdb5a444be1!8m2!3d35.7890402!4d-78.7797644!16zL20vMDEzaHRw?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                cary, north carolina
+              </Link>
+              . escaped. sorry mom.
             </li>
           </ul>
         </section>
@@ -115,18 +176,36 @@ export default function Home() {
           <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
             tl;dr
           </p>
-          <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-            <p>
-              i like building tools that make the physical world easier to reason about — zoning,
-              transit, cities, infrastructure. most of my work sits at the intersection of geospatial
-              data, machine learning, and urban planning.
-            </p>
-            <p>
-              lately that&apos;s looked like zoning intelligence for cities, routing engines for
-              transportation, and remote sensing models on top of satellite imagery. always looking
-              for real problems with messy data and concrete constraints.
-            </p>
-          </div>
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            cities are broken and i want to fix them with ai. most of my work is at the intersection
+            of geospatial data, machine learning, and urban planning—which is a fancy way of saying
+            i read zoning codes so you don&apos;t have to.
+          </p>
+        </section>
+
+        {/* Currently */}
+        <section className="space-y-3">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            currently
+          </p>
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <li>
+              looking for sf housing for summer 2026. budget: intern salary. requirements: shower
+              and kitchen in different rooms.
+            </li>
+            <li>
+              building{' '}
+              <Link
+                href="https://paprika.nu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                paprika.nu
+              </Link>
+            </li>
+            <li>probably on bart right now</li>
+          </ul>
         </section>
 
         {/* Previous / other things */}
@@ -152,7 +231,10 @@ export default function Home() {
 
         {/* Footer note */}
         <section className="pt-4 border-t border-[var(--border)] text-[var(--text-muted)] text-xs space-y-1">
-          <p>this page changes often. if you&apos;re reading this, feel free to reach out.</p>
+          <p>
+            this page changes often. if you&apos;re reading this, feel free to reach out. if
+            you&apos;re from stanford, no.
+          </p>
         </section>
       </div>
     </main>
