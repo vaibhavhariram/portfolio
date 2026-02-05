@@ -73,17 +73,9 @@ export default function TraditionalHome() {
             </span>
           </a>
           <a 
-            href="tel:+19196385215" 
-            className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
-          >
-            <span className="relative">
-              Phone
-              <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-[var(--text-primary)] group-hover:w-full transition-all duration-200" />
-            </span>
-          </a>
-          <a 
-            href="/resume.pdf" 
+            href="https://drive.google.com/file/d/1JoSVyfBiNNh7OJUcljQZO0zg6Q4sCHL-/view?usp=sharing"
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
           >
             <FileText className="w-4 h-4" />
@@ -93,7 +85,7 @@ export default function TraditionalHome() {
             </span>
           </a>
           <a 
-            href="https://github.com/vaibhavh" 
+            href="https://github.com/vaibhavhariram"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"

@@ -15,7 +15,7 @@ interface LinkItem {
 
 const links: LinkItem[] = [
   {
-    href: 'https://github.com/vaibhavh',
+    href: 'https://github.com/vaibhavhariram',
     label: 'GitHub',
     icon: <Github className="w-5 h-5" />,
   },
@@ -25,10 +25,9 @@ const links: LinkItem[] = [
     icon: <Linkedin className="w-5 h-5" />,
   },
   {
-    href: '/resume.pdf',
+    href: 'https://drive.google.com/file/d/1JoSVyfBiNNh7OJUcljQZO0zg6Q4sCHL-/view?usp=sharing',
     label: 'Resume',
     icon: <FileText className="w-5 h-5" />,
-    download: true,
   },
   {
     href: 'mailto:vaibhavhariram@berkeley.edu',
