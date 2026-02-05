@@ -1,187 +1,160 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import WorldMap from '@/components/WorldMap';
-import Pin from '@/components/Pin';
-import PinTooltip from '@/components/PinTooltip';
-import ContentCard from '@/components/ContentCard';
-import Header from '@/components/Header';
-import UtilityLinks from '@/components/UtilityLinks';
-import Legend from '@/components/Legend';
-import MobileListView from '@/components/MobileListView';
-import { pins, Pin as PinType } from '@/data/pins';
-import { latLngToPixel } from '@/utils/mapProjection';
-import { List } from 'lucide-react';
+import Link from 'next/link';
 
-function HomeContent() {
-  const searchParams = useSearchParams();
-  const [isMapLoaded, setIsMapLoaded] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const [selectedPin, setSelectedPin] = useState<PinType | null>(null);
-  const [hoveredPin, setHoveredPin] = useState<PinType | null>(null);
-  const [hoveredPosition, setHoveredPosition] = useState<{ x: number; y: number } | null>(null);
-  const [showListView, setShowListView] = useState(false);
-  
-  const mapContainerRef = useRef<HTMLDivElement>(null);
-
-  // Open a specific pin when visiting with ?pin=id (e.g. from traditional "View on map")
-  useEffect(() => {
-    const pinId = searchParams.get('pin');
-    if (pinId && pins.some((p) => p.id === pinId)) {
-      const pin = pins.find((p) => p.id === pinId) ?? null;
-      setSelectedPin(pin);
-      setHasInteracted(true);
-    }
-  }, [searchParams]);
-
-  const handleMapLoaded = useCallback(() => {
-    setIsMapLoaded(true);
-  }, []);
-
-  const handlePinClick = useCallback((pin: PinType) => {
-    setSelectedPin(pin);
-    setHasInteracted(true);
-    setHoveredPin(null);
-  }, []);
-
-  const handlePinHoverStart = useCallback((pin: PinType, position: { x: number; y: number }) => {
-    if (!selectedPin) {
-      setHoveredPin(pin);
-      setHoveredPosition(position);
-    }
-  }, [selectedPin]);
-
-  const handlePinHoverEnd = useCallback(() => {
-    setHoveredPin(null);
-    setHoveredPosition(null);
-  }, []);
-
-  const handleCloseCard = useCallback(() => {
-    setSelectedPin(null);
-  }, []);
-
-  return (
-    <main className="relative w-screen h-screen overflow-hidden bg-[#0a0a0f]">
-      {/* Header */}
-      <Header hasInteracted={hasInteracted} isMapLoaded={isMapLoaded} />
-      
-      {/* Utility Links */}
-      <UtilityLinks />
-      
-      {/* Map Container */}
-      <div 
-        ref={mapContainerRef}
-        className="absolute inset-0 flex items-center justify-center p-4 pt-32 pb-20 md:p-16"
-      >
-        {/* Aspect ratio container matching SVG viewBox (2000:857) */}
-        <div 
-          className="relative w-full h-full flex items-center justify-center"
-          style={{ maxWidth: '1400px', maxHeight: '600px' }}
-        >
-          <div 
-            className="relative w-full"
-            style={{ 
-              aspectRatio: '2000 / 857',
-              maxHeight: '100%',
-              maxWidth: '100%'
-            }}
-          >
-            {/* World Map SVG */}
-            <WorldMap onMapLoaded={handleMapLoaded} />
-            
-            {/* Pins Layer - now correctly aligned with SVG */}
-            <div className="absolute inset-0">
-              {pins.map((pin, index) => {
-                const position = latLngToPixel(pin.coordinates.lat, pin.coordinates.lng);
-                return (
-                  <Pin
-                    key={pin.id}
-                    pin={pin}
-                    position={position}
-                    index={index}
-                    isMapLoaded={isMapLoaded}
-                    isSelected={selectedPin?.id === pin.id}
-                    onHoverStart={() => handlePinHoverStart(pin, position)}
-                    onHoverEnd={handlePinHoverEnd}
-                    onClick={() => handlePinClick(pin)}
-                  />
-                );
-              })}
-            </div>
-            
-            {/* Tooltip */}
-            <PinTooltip 
-              pin={hoveredPin} 
-              position={hoveredPosition} 
-              containerRef={mapContainerRef}
-            />
-          </div>
-        </div>
-      </div>
-      
-      {/* Legend - Hidden on mobile */}
-      <div className="hidden md:block">
-        <Legend />
-      </div>
-      
-      {/* Content Card */}
-      <ContentCard pin={selectedPin} onClose={handleCloseCard} />
-      
-      {/* Mobile List View Toggle */}
-      <div className="fixed bottom-6 right-6 z-20 md:hidden">
-        <button
-          className="
-            flex items-center gap-2
-            px-4 py-2
-            bg-[#1a1a1f]
-            border border-[#2a2a2f]
-            rounded-full
-            text-xs
-            text-[#a0a0a0]
-            hover:text-white
-            hover:bg-[#2a2a2f]
-            transition-colors
-          "
-          onClick={() => setShowListView(true)}
-        >
-          <List className="w-4 h-4" />
-          View as List
-        </button>
-      </div>
-      
-      {/* Mobile Legend Toggle */}
-      <div className="fixed bottom-6 left-6 z-20 md:hidden">
-        <div className="flex flex-wrap gap-2 text-[10px]">
-          <span className="flex items-center gap-1 text-[#6b6b6b]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6]" />
-            Projects
-          </span>
-          <span className="flex items-center gap-1 text-[#6b6b6b]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#14b8a6]" />
-            Research
-          </span>
-          <span className="flex items-center gap-1 text-[#6b6b6b]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#a855f7]" />
-            Education
-          </span>
-        </div>
-      </div>
-      
-      {/* Mobile List View */}
-      <MobileListView
-        isOpen={showListView}
-        onClose={() => setShowListView(false)}
-        onPinSelect={handlePinClick}
-      />
-    </main>
-  );
-}
-
+/**
+ * Minimal, text-first homepage inspired by dris.one.
+ * Single scrollable page, no map – focused on story and work.
+ */
 export default function Home() {
   return (
-    <Suspense fallback={<main className="min-h-screen w-screen bg-[#0a0a0f]" />}>
-      <HomeContent />
-    </Suspense>
+    <main className="min-h-screen bg-[#0a0a0f] text-[var(--text-primary)] px-6 py-12 md:py-16">
+      <div className="max-w-2xl mx-auto space-y-12">
+        {/* Intro */}
+        <section className="space-y-3">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            hey, i&apos;m
+          </p>
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
+            Vaibhav Hariram
+          </h1>
+          <p className="text-sm text-[var(--text-secondary)]">
+            cs @ uc berkeley · minor in urban/city planning · geospatial ai/ml
+          </p>
+        </section>
+
+        {/* Contact / directory */}
+        <section className="space-y-2">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            directory
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[var(--text-secondary)]">
+            <Link
+              href="mailto:vaibhavhariram@berkeley.edu"
+              className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+            >
+              email
+            </Link>
+            <Link
+              href="https://github.com/vaibhavhariram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+            >
+              github
+            </Link>
+            <Link
+              href="https://linkedin.com/in/vaibhavhariram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+            >
+              linkedin
+            </Link>
+            <Link
+              href="https://drive.google.com/file/d/1JoSVyfBiNNh7OJUcljQZO0zg6Q4sCHL-/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+            >
+              resume
+            </Link>
+          </div>
+        </section>
+
+        {/* Achievements / headline work */}
+        <section className="space-y-3">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            a few things i&apos;ve done
+          </p>
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <li>
+              founding engineer at{' '}
+              <span className="text-[var(--text-primary)]">Paprika</span>, building a zoning
+              intelligence system for 150k+ san francisco parcels with postgis + rag pipelines.
+            </li>
+            <li>
+              software engineering intern at{' '}
+              <span className="text-[var(--text-primary)]">Railinc</span>, working on gis-driven
+              tools for freight rail operations and terminal workflows.
+            </li>
+            <li>
+              b.a. computer science @{' '}
+              <span className="text-[var(--text-primary)]">uc berkeley</span> with a minor in
+              urban/city planning (gpa 3.9).
+            </li>
+          </ul>
+        </section>
+
+        {/* Projects / research */}
+        <section className="space-y-3">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            projects & research
+          </p>
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <li>
+              <span className="text-[var(--text-primary)]">Atlas</span> — predictive multi-modal
+              transportation router over 500k+ road segments, combining dijkstra/a*/ch with
+              xgboost traffic models for sub-100ms queries.
+            </li>
+            <li>
+              <span className="text-[var(--text-primary)]">FireGraph</span> — real-time fire risk
+              visualization platform combining live fire perimeters, winds, and population density
+              to surface high-risk evacuation corridors.
+            </li>
+            <li>
+              <span className="text-[var(--text-primary)]">Crypto Mining Detection</span> — ml
+              model using multi-spectral satellite imagery (ndvi, ndwi, lst) to detect crypto mining
+              developments in el salvador (potts lab, berkeley).
+            </li>
+          </ul>
+        </section>
+
+        {/* TL;DR / story */}
+        <section className="space-y-3">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            tl;dr
+          </p>
+          <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+            <p>
+              i like building tools that make the physical world easier to reason about — zoning,
+              transit, cities, infrastructure. most of my work sits at the intersection of geospatial
+              data, machine learning, and urban planning.
+            </p>
+            <p>
+              lately that&apos;s looked like zoning intelligence for cities, routing engines for
+              transportation, and remote sensing models on top of satellite imagery. always looking
+              for real problems with messy data and concrete constraints.
+            </p>
+          </div>
+        </section>
+
+        {/* Previous / other things */}
+        <section className="space-y-3">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            some other things
+          </p>
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <li>
+              coursework: data structures, discrete math, structure of computer programs, intro to
+              internet protocols.
+            </li>
+            <li>
+              tools: python, typescript, react/next.js, postgresql/postgis, xgboost, scikit-learn,
+              google earth engine, aws, docker.
+            </li>
+            <li>
+              interests: cities & transit, maps, tamil culture, soccer jerseys, real estate, and
+              whatever new thing i&apos;m learning this month.
+            </li>
+          </ul>
+        </section>
+
+        {/* Footer note */}
+        <section className="pt-4 border-t border-[var(--border)] text-[var(--text-muted)] text-xs space-y-1">
+          <p>this page changes often. if you&apos;re reading this, feel free to reach out.</p>
+        </section>
+      </div>
+    </main>
   );
 }
