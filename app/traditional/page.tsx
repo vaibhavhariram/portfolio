@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight, ArrowLeft, Mail, FileText, Github, Linkedin } from 'lucide-react';
+import Typewriter from '@/components/Typewriter';
 
 const sectionCards = [
   {
@@ -34,14 +37,23 @@ export default function TraditionalHome() {
     <div className="space-y-16">
       {/* Hero Section */}
       <section className="space-y-6">
-        <p className="text-[var(--text-muted)] text-sm tracking-wide animate-fade-in-up" style={{ animationDelay: '0ms' }}>
-          Hello, I&apos;m
+        <p className="text-[var(--text-muted)] text-sm tracking-wide min-h-[1.5em]">
+          <Typewriter
+            text="Hello, I'm"
+            speed={80}
+            startDelay={400}
+            showCursor={true}
+          />
         </p>
         <h1 
-          className="text-5xl md:text-6xl font-semibold text-[var(--text-primary)] tracking-tight animate-fade-in-up"
-          style={{ animationDelay: '50ms' }}
+          className="text-5xl md:text-6xl font-semibold text-[var(--text-primary)] tracking-tight min-h-[1.2em]"
         >
-          Vaibhav Hariram
+          <Typewriter
+            text="Vaibhav Hariram"
+            speed={90}
+            startDelay={1200}
+            showCursor={true}
+          />
         </h1>
         <p 
           className="text-xl text-[var(--text-secondary)] animate-fade-in-up"
