@@ -11,18 +11,18 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="
-        relative w-10 h-10 md:w-12 md:h-12
+        relative w-8 h-8 md:w-9 md:h-9
         flex items-center justify-center
         rounded-full
         text-[var(--text-secondary)]
         hover:text-[var(--text-primary)]
         hover:bg-[var(--bg-elevated)]
         transition-colors duration-200
-        focus:outline-none focus:ring-2 focus:ring-[var(--text-muted)] focus:ring-offset-2 focus:ring-offset-[var(--bg-primary)]
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-muted)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]
       "
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      <span className="relative w-6 h-6 md:w-7 md:h-7">
+      <span className="relative w-4 h-4 md:w-5 md:h-5">
         {/* Sun icon - visible in dark mode (click to go light) */}
         <span
           className={`
