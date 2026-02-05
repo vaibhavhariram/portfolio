@@ -47,14 +47,14 @@ export default function TraditionalHome() {
           className="text-xl text-[var(--text-secondary)] animate-fade-in-up"
           style={{ animationDelay: '100ms' }}
         >
-          CS @ UC Berkeley · Geospatial AI/ML
+          B.A. Computer Science @ UC Berkeley · Minor in Urban/City Planning
         </p>
         <p 
           className="text-[var(--text-secondary)] leading-relaxed max-w-[600px] animate-fade-in-up"
           style={{ animationDelay: '150ms' }}
         >
-          Building AI for cities, intelligence for the physical world. I&apos;m passionate about 
-          geospatial technology, urban planning, and using AI to solve real-world problems.
+          Building AI for cities and intelligence for the physical world. Founding Engineer at Paprika; 
+          passionate about geospatial technology, urban planning, and using AI to solve real-world problems.
         </p>
 
         {/* Links */}
@@ -63,12 +63,21 @@ export default function TraditionalHome() {
           style={{ animationDelay: '200ms' }}
         >
           <a 
-            href="mailto:vaibhav@berkeley.edu" 
+            href="mailto:vaibhavhariram@berkeley.edu" 
             className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
           >
             <Mail className="w-4 h-4" />
             <span className="relative">
               Email
+              <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-[var(--text-primary)] group-hover:w-full transition-all duration-200" />
+            </span>
+          </a>
+          <a 
+            href="tel:+19196385215" 
+            className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+          >
+            <span className="relative">
+              Phone
               <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-[var(--text-primary)] group-hover:w-full transition-all duration-200" />
             </span>
           </a>
@@ -96,7 +105,7 @@ export default function TraditionalHome() {
             </span>
           </a>
           <a 
-            href="https://linkedin.com/in/vaibhavh" 
+            href="https://linkedin.com/in/vaibhavhariram" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"

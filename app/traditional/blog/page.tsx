@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Thoughts on technology, cities, and everything in between.',
+};
 
 const posts = [
   {
@@ -52,13 +58,19 @@ export default function BlogPage() {
         More posts coming soon...
       </p>
 
-      <div className="pt-8">
+      <div className="pt-8 flex flex-wrap items-center gap-4">
         <Link 
           href="/traditional" 
           className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Back
+        </Link>
+        <Link 
+          href="/" 
+          className="text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors"
+        >
+          View on map →
         </Link>
       </div>
     </div>

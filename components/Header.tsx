@@ -26,19 +26,22 @@ export default function Header({ hasInteracted, isMapLoaded }: HeaderProps) {
       
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: isMapLoaded && !hasInteracted ? 1 : 0 }}
-        transition={{ duration: 0.5, delay: isMapLoaded && !hasInteracted ? 0.3 : 0 }}
-        className="mt-6 hidden md:block"
+        animate={{ opacity: isMapLoaded ? 1 : 0 }}
+        transition={{ duration: 0.5, delay: isMapLoaded ? 0.3 : 0 }}
+        className="mt-6 hidden md:block space-y-1"
       >
-        <p className="text-[14px] md:text-[16px] text-[#d0d0d0] leading-relaxed">
-          click a pin to start exploring. or{' '}
+        {!hasInteracted && (
+          <p className="text-[14px] md:text-[16px] text-[#d0d0d0] leading-relaxed">
+            click a pin to start exploring.
+          </p>
+        )}
+        <p className="text-[14px] md:text-[16px] text-[#d0d0d0]">
           <Link 
             href="/traditional" 
-            className="underline underline-offset-2 hover:text-white transition-colors"
+            className="underline underline-offset-2 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f] rounded"
           >
-            click here for a traditional viewing experience
+            View traditional portfolio →
           </Link>
-          .
         </p>
       </motion.div>
     </header>

@@ -1,6 +1,20 @@
+import type { Metadata } from 'next';
 import TraditionalHeader from '@/components/TraditionalHeader';
 import { ThemeProvider } from '@/components/ThemeContext';
 import TraditionalThemeWrapper from '@/components/TraditionalThemeWrapper';
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Vaibhav Hariram | Portfolio',
+    template: '%s | Vaibhav Hariram',
+  },
+  description: 'B.A. Computer Science @ UC Berkeley · Minor in Urban/City Planning · Founding Engineer at Paprika · Geospatial AI/ML',
+  openGraph: {
+    title: 'Vaibhav Hariram | Portfolio',
+    description: 'B.A. Computer Science @ UC Berkeley · Founding Engineer at Paprika',
+    type: 'website',
+  },
+};
 
 export default function TraditionalLayout({
   children,

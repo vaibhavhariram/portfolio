@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import WorldMap from '@/components/WorldMap';
 import Pin from '@/components/Pin';
 import PinTooltip from '@/components/PinTooltip';
@@ -13,7 +14,8 @@ import { pins, Pin as PinType } from '@/data/pins';
 import { latLngToPixel } from '@/utils/mapProjection';
 import { List } from 'lucide-react';
 
-export default function Home() {
+function HomeContent() {
+  const searchParams = useSearchParams();
   const [isMapLoaded, setIsMapLoaded] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [selectedPin, setSelectedPin] = useState<PinType | null>(null);
@@ -22,6 +24,16 @@ export default function Home() {
   const [showListView, setShowListView] = useState(false);
   
   const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  // Open a specific pin when visiting with ?pin=id (e.g. from traditional "View on map")
+  useEffect(() => {
+    const pinId = searchParams.get('pin');
+    if (pinId && pins.some((p) => p.id === pinId)) {
+      const pin = pins.find((p) => p.id === pinId) ?? null;
+      setSelectedPin(pin);
+      setHasInteracted(true);
+    }
+  }, [searchParams]);
 
   const handleMapLoaded = useCallback(() => {
     setIsMapLoaded(true);
@@ -163,5 +175,13 @@ export default function Home() {
         onPinSelect={handlePinClick}
       />
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<main className="min-h-screen w-screen bg-[#0a0a0f]" />}>
+      <HomeContent />
+    </Suspense>
   );
 }

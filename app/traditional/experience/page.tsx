@@ -1,24 +1,29 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 
+export const metadata: Metadata = {
+  title: 'Experience',
+  description: 'Work experience — Founding Engineer at Paprika, Software Engineering Intern at Railinc Corp. Zoning intelligence, GIS, full-stack development.',
+};
+
 const experiences = [
   {
-    title: 'Software Engineering Intern',
-    company: 'Company Name',
+    title: 'Founding Engineer',
+    company: 'Paprika',
     location: 'San Francisco, CA',
-    date: 'Summer 2025',
-    description: 'Description of your work and accomplishments. What technologies did you use? What impact did you have?',
-    link: '#',
+    date: 'Oct. 2025 – Present',
+    description: 'Architected zoning intelligence system processing 150K+ San Francisco parcels using PostGIS spatial queries and RAG-based LLM pipelines, reducing parcel feasibility analysis from ~5 hours to 90 seconds. Built document understanding pipeline for municipal code parsing with hierarchical chunking across 400+ zoning sections, achieving 94% citation accuracy on structured planning queries via Claude API. Shipped production MVP in 30 days as sole engineer: Next.js/TypeScript frontend, PostGIS backend, 6 municipal API integrations, and natural language zoning interface, validated with 3 real estate firms.',
+    link: undefined,
   },
   {
-    title: 'Research Assistant',
-    company: 'UC Berkeley',
-    location: 'Berkeley, CA',
-    date: '2024 - Present',
-    description: 'Description of your research work. What problems are you solving? What methods are you using?',
-    link: '#',
+    title: 'Software Engineering Intern',
+    company: 'Railinc Corp.',
+    location: 'Raleigh, NC',
+    date: 'Summer 2024 & 2025',
+    description: 'Consulted with technical product teams from 20+ freight rail clients (BNSF, CSX, Union Pacific) to scope operational challenges and define GIS feature requirements for logistics and network routing. Built and shipped full-stack functionality using React and Java Spring Boot for an enterprise terminal operations system (RIGIS), supporting mission-critical workflows with 99.8% platform uptime. Developed Python ETL pipeline processing 100K+ station records, reducing manual data cleaning time by 75%. Optimized PostGIS queries in PostgreSQL with spatial indexing and geometry simplification, cutting geospatial query runtime by 40% and lowering average API response times from 500ms to 300ms.',
+    link: undefined,
   },
-  // Add more experiences here
 ];
 
 export default function ExperiencePage() {
@@ -40,7 +45,7 @@ export default function ExperiencePage() {
               <span className="text-sm text-[var(--text-muted)] md:text-right">{exp.date}</span>
             </div>
             <p className="text-sm text-[var(--text-muted)] leading-relaxed">{exp.description}</p>
-            {exp.link && exp.link !== '#' && (
+            {exp.link && (
               <a 
                 href={exp.link}
                 target="_blank"
@@ -54,17 +59,19 @@ export default function ExperiencePage() {
         ))}
       </div>
 
-      <p className="text-sm text-[var(--text-muted)] italic">
-        More experiences to be added...
-      </p>
-
-      <div className="pt-8">
+      <div className="pt-8 flex flex-wrap items-center gap-4">
         <Link 
           href="/traditional" 
           className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Back
+        </Link>
+        <Link 
+          href="/?pin=paprika" 
+          className="text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors"
+        >
+          View on map →
         </Link>
       </div>
     </div>

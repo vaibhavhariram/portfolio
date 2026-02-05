@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, FileText, Mail } from 'lucide-react';
+import Link from 'next/link';
+import { Github, Linkedin, FileText, Mail, LayoutGrid } from 'lucide-react';
 import { useState } from 'react';
 
 interface LinkItem {
@@ -9,16 +10,17 @@ interface LinkItem {
   label: string;
   icon: React.ReactNode;
   download?: boolean;
+  internal?: boolean;
 }
 
 const links: LinkItem[] = [
   {
-    href: 'https://github.com/vaibhav',
+    href: 'https://github.com/vaibhavh',
     label: 'GitHub',
     icon: <Github className="w-5 h-5" />,
   },
   {
-    href: 'https://linkedin.com/in/vaibhav',
+    href: 'https://linkedin.com/in/vaibhavhariram',
     label: 'LinkedIn',
     icon: <Linkedin className="w-5 h-5" />,
   },
@@ -29,9 +31,15 @@ const links: LinkItem[] = [
     download: true,
   },
   {
-    href: 'mailto:vaibhav@email.com',
+    href: 'mailto:vaibhavhariram@berkeley.edu',
     label: 'Email',
     icon: <Mail className="w-5 h-5" />,
+  },
+  {
+    href: '/traditional',
+    label: 'Traditional portfolio',
+    icon: <LayoutGrid className="w-5 h-5" />,
+    internal: true,
   },
 ];
 
@@ -47,25 +55,46 @@ export default function UtilityLinks() {
     >
       {links.map((link) => (
         <div key={link.label} className="relative">
-          <a
-            href={link.href}
-            aria-label={link.label}
-            download={link.download}
-            target={link.download ? undefined : '_blank'}
-            rel={link.download ? undefined : 'noopener noreferrer'}
-            className="
-              block p-2
-              text-white/70 
-              hover:text-white 
-              transition-colors duration-200
-            "
-            onMouseEnter={() => setHoveredLink(link.label)}
-            onMouseLeave={() => setHoveredLink(null)}
-            onFocus={() => setHoveredLink(link.label)}
-            onBlur={() => setHoveredLink(null)}
-          >
-            {link.icon}
-          </a>
+          {link.internal ? (
+            <Link
+              href={link.href}
+              aria-label={link.label}
+              className="
+                block p-2
+                text-white/70 
+                hover:text-white 
+                transition-colors duration-200
+                rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f]
+              "
+              onMouseEnter={() => setHoveredLink(link.label)}
+              onMouseLeave={() => setHoveredLink(null)}
+              onFocus={() => setHoveredLink(link.label)}
+              onBlur={() => setHoveredLink(null)}
+            >
+              {link.icon}
+            </Link>
+          ) : (
+            <a
+              href={link.href}
+              aria-label={link.label}
+              download={link.download}
+              target={link.download ? undefined : '_blank'}
+              rel={link.download ? undefined : 'noopener noreferrer'}
+              className="
+                block p-2
+                text-white/70 
+                hover:text-white 
+                transition-colors duration-200
+                rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f]
+              "
+              onMouseEnter={() => setHoveredLink(link.label)}
+              onMouseLeave={() => setHoveredLink(null)}
+              onFocus={() => setHoveredLink(link.label)}
+              onBlur={() => setHoveredLink(null)}
+            >
+              {link.icon}
+            </a>
+          )}
           
           {/* Tooltip */}
           {hoveredLink === link.label && (

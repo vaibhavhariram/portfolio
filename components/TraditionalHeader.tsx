@@ -18,17 +18,22 @@ export default function TraditionalHeader() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-colors duration-300 relative"
       style={{
         backgroundColor: 'color-mix(in srgb, var(--bg-primary) 80%, transparent)',
         borderColor: 'color-mix(in srgb, var(--border) 50%, transparent)',
       }}
     >
-      <div className="max-w-[800px] mx-auto px-6 py-4 flex items-center justify-between">
+      {/* Theme toggle - fixed at top right edge */}
+      <div className="absolute top-0 right-0 pt-3 pr-3 md:pt-4 md:pr-4">
+        <ThemeToggle />
+      </div>
+
+      <div className="max-w-[800px] mx-auto px-6 py-4 flex items-center justify-between pr-14 md:pr-16">
         {/* Logo / Name */}
         <Link
           href="/traditional"
-          className="font-medium text-lg transition-colors hover:opacity-80"
+          className="font-medium text-lg transition-colors hover:opacity-80 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
           style={{ color: 'var(--text-primary)' }}
         >
           Vaibhav Hariram
@@ -43,7 +48,7 @@ export default function TraditionalHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group relative text-sm transition-colors"
+                  className="group relative text-sm transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
                   style={{ color: 'var(--text-secondary)' }}
                 >
                   <span className="group-hover:opacity-100" style={{ opacity: isActive ? 1 : undefined }}>
@@ -61,9 +66,6 @@ export default function TraditionalHeader() {
               );
             })}
           </nav>
-
-          {/* Theme toggle - prominent in top right */}
-          <ThemeToggle />
 
           {/* Mobile menu button */}
           <button className="md:hidden transition-colors" style={{ color: 'var(--text-secondary)' }} aria-label="Menu">
@@ -85,7 +87,7 @@ export default function TraditionalHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-xs transition-colors hover:opacity-100`}
+              className="text-xs transition-colors hover:opacity-100 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
               style={{
                 color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
                 opacity: isActive ? 1 : undefined,

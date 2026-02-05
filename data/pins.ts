@@ -60,15 +60,12 @@ export const pins: Pin[] = [
       display: "37.4419°N, 122.1430°W"
     },
     category: 'projects',
-    title: 'CampusFlow & Elytra',
-    subtitle: 'Bay Area Projects',
-    description: '[PLACEHOLDER: Add description of CampusFlow, Elytra, and other Bay Area projects. What they do, your role, impact.]',
+    title: 'Atlas & FireGraph',
+    subtitle: 'Routing & Geospatial Visualization',
+    description: 'Atlas: Predictive multi-modal transportation router—500K+ OpenStreetMap segments, Dijkstra/A*/Contraction Hierarchies, XGBoost traffic prediction (92% accuracy), sub-100ms query latency. FireGraph: Real-time geospatial platform combining live fire perimeters, wind vectors, and population density to surface high-risk evacuation corridors across California; NIFC, CAL FIRE, NOAA pipelines, WebGL mapping.',
     heroImage: '/images/projects/campusflow.png',
-    tags: ['React', 'Node.js', 'PostgreSQL'],
-    links: [
-      { label: 'CampusFlow Demo', url: '#', primary: true },
-      { label: 'Elytra GitHub', url: '#' }
-    ]
+    tags: ['FastAPI', 'PostgreSQL', 'Redis', 'XGBoost', 'Next.js', 'Deck.gl', 'PostGIS', 'OpenRouteService'],
+    links: []
   },
   {
     id: 'paprika',
@@ -80,15 +77,28 @@ export const pins: Pin[] = [
     },
     category: 'projects',
     title: 'Paprika',
-    subtitle: 'AI Copilot for Urban Planning',
-    description: '[PLACEHOLDER: Describe Paprika - AI copilot for urban planners, automates zoning analysis and development feasibility assessments for SF parcels. Your flagship project.]',
+    subtitle: 'Founding Engineer',
+    description: 'Architected zoning intelligence system processing 150K+ San Francisco parcels using PostGIS spatial queries and RAG-based LLM pipelines, reducing parcel feasibility analysis from ~5 hours to 90 seconds. Built document understanding pipeline for municipal code parsing (400+ zoning sections, 94% citation accuracy via Claude API). Shipped production MVP in 30 days as sole engineer: Next.js/TypeScript frontend, PostGIS backend, 6 municipal API integrations, validated with 3 real estate firms.',
     heroImage: '/images/projects/paprika.png',
-    tags: ['Next.js', 'PostGIS', 'Claude API', 'DataSF'],
-    links: [
-      { label: 'View Demo', url: '#', primary: true },
-      { label: 'GitHub', url: '#' }
-    ],
+    tags: ['Next.js', 'TypeScript', 'PostGIS', 'Claude API', 'RAG'],
+    links: [],
     featured: true
+  },
+  {
+    id: 'railinc',
+    location: 'Raleigh, NC',
+    coordinates: {
+      lat: 35.7796,
+      lng: -78.6382,
+      display: "35.7796°N, 78.6382°W"
+    },
+    category: 'projects',
+    title: 'Railinc Corp.',
+    subtitle: 'Software Engineering Intern · Summer 2024 & 2025',
+    description: 'Consulted with technical product teams from 20+ freight rail clients (BNSF, CSX, Union Pacific) to scope GIS feature requirements. Built full-stack functionality with React and Java Spring Boot for RIGIS terminal operations system (99.8% uptime). Developed Python ETL pipeline processing 100K+ station records, reducing manual data cleaning by 75%. Optimized PostGIS queries with spatial indexing and geometry simplification, cutting geospatial query runtime by 40% and API response times from 500ms to 300ms.',
+    heroImage: '',
+    tags: ['React', 'Java', 'Spring Boot', 'PostGIS', 'Python', 'ETL'],
+    links: []
   },
 
   // ============ EDUCATION ============
@@ -102,13 +112,11 @@ export const pins: Pin[] = [
     },
     category: 'education',
     title: 'UC Berkeley',
-    subtitle: "Computer Science & Geography '28",
-    description: '[PLACEHOLDER: Describe your Berkeley experience - major, interesting classes, URAP research program, clubs, what you love about it.]',
+    subtitle: "B.A. Computer Science · Minor in Urban/City Planning",
+    description: 'B.A. in Computer Science with a minor in Urban/City Planning. GPA: 3.9. Relevant coursework: Data Structures, Discrete Math, Structure of Computer Programs, Introduction to Internet Protocols.',
     heroImage: '/images/education/berkeley.png',
-    tags: ['Computer Science', 'Geography', 'URAP'],
-    links: [
-      { label: 'Coursework', url: '#' }
-    ]
+    tags: ['Computer Science', 'Urban Planning', 'Data Structures', 'Discrete Math'],
+    links: []
   },
 
   // ============ RESEARCH ============
@@ -122,31 +130,11 @@ export const pins: Pin[] = [
     },
     category: 'research',
     title: 'Crypto Mining Detection',
-    subtitle: 'Satellite Imagery Research',
-    description: '[PLACEHOLDER: Describe the URAP research project - detecting crypto mining facilities in El Salvador using satellite imagery, multi-spectral analysis (NDVI, NDWI, land surface temperature, night lights).]',
+    subtitle: 'Potts Lab, UC Berkeley · Sep 2025 – Present',
+    description: 'Developing ML model to identify crypto mining developments in El Salvador using multi-spectral analysis—NDVI, NDWI, and land surface temperature. Built change detection pipeline in Google Earth Engine processing satellite imagery across 5-year windows; Random Forest classification to isolate vegetation loss and thermal patterns.',
     heroImage: '/images/research/el-salvador.png',
-    tags: ['Google Earth Engine', 'Remote Sensing', 'Python', 'NDVI', 'Multi-spectral'],
-    links: [
-      { label: 'Research Paper', url: '#', primary: true }
-    ]
-  },
-  {
-    id: 'chennai',
-    location: 'Chennai, India',
-    coordinates: {
-      lat: 13.0827,
-      lng: 80.2707,
-      display: "13.0827°N, 80.2707°E"
-    },
-    category: 'research',
-    title: 'Urban Heat Island Study',
-    subtitle: 'Climate & Urban Planning Research',
-    description: '[PLACEHOLDER: Describe the urban heat island research on Chennai - methodology, findings, implications for urban planning.]',
-    heroImage: '/images/research/chennai.png',
-    tags: ['GIS', 'Remote Sensing', 'Climate', 'Urban Planning'],
-    links: [
-      { label: 'View Analysis', url: '#', primary: true }
-    ]
+    tags: ['Google Earth Engine', 'Python', 'Landsat', 'Sentinel', 'Random Forest', 'NDVI', 'NDWI'],
+    links: []
   },
 
   // ============ PERSONAL ============
@@ -173,9 +161,9 @@ export const pins: Pin[] = [
       display: "10.7905°N, 78.7047°E"
     },
     category: 'personal',
-    title: 'My Hometown',
+    title: 'Tamil Culture · My Hometown',
     subtitle: 'Where It All Began',
-    description: '[PLACEHOLDER: Story about your hometown in Tamil Nadu - family roots, visits, cultural connection.]',
+    description: 'Family roots and cultural connection to Tamil Nadu. Hometown and heritage that shape who I am.',
     heroImage: '/images/personal/trichy.jpg',
   },
 
@@ -228,14 +216,14 @@ export const pins: Pin[] = [
     id: 'chicago',
     location: 'Chicago, IL',
     coordinates: {
-      lat: 43.8781,
-      lng: -86.6298,
+      lat: 41.8781,
+      lng: -87.6298,
       display: "41.8781°N, 87.6298°W"
     },
     category: 'interests',
-    title: 'Chicago Sports',
-    subtitle: 'Sports',
-    description: 'grew up a big bulls and bears fan. soldier field and united center have unmatched energy. waiting for the next d-rose, my rome odunze jersey, and maybe a underdog championship run.',
+    title: 'Soccer Jerseys & Chicago Sports',
+    subtitle: 'Interests',
+    description: 'Grew up a big Bulls and Bears fan. Soldier Field and United Center have unmatched energy. Love collecting soccer jerseys and following the game.',
     heroImage: '',
   },
   {
@@ -247,9 +235,9 @@ export const pins: Pin[] = [
       display: "51.5074°N, 0.1278°W"
     },
     category: 'interests',
-    title: 'Chelsea FC',
-    subtitle: 'Football',
-    description: 'former home, stil my spiritual abode. up the chels! here is a picture of me attending a friendly game in charlotte!]',
+    title: 'Soccer Jerseys',
+    subtitle: 'Chelsea FC',
+    description: 'Former home, still my spiritual abode. Up the Chels! Attended a friendly in Charlotte.',
     heroImage: '/images/interests/chelsea.jpg',
   },
   {
@@ -261,38 +249,10 @@ export const pins: Pin[] = [
       display: "40.7128°N, 74.0060°W"
     },
     category: 'interests',
-    title: 'my connection to the big apple',
-    subtitle: 'what does new york mean to me?',
-    description: 'from my favorite TV show (How I Met Your Mother) to the dosa guy in central park and everywhere from broadway to brooklyn and everything in between- i need to spend my 20s here.',
+    title: 'Real Estate & Cities',
+    subtitle: 'Interests',
+    description: 'From urban design to how cities work. Fascinated by real estate, development, and spending time in places like NYC—Broadway to Brooklyn and everything in between.',
     heroImage: '/images/interests/himym.jpg',
-  },
-  {
-    id: 'tokyo',
-    location: 'Tokyo, Japan',
-    coordinates: {
-      lat: 35.6762,
-      lng: 139.6503,
-      display: "35.6762°N, 139.6503°E"
-    },
-    category: 'interests',
-    title: 'Anime',
-    subtitle: 'niche i was into ',
-    description: '[PLACEHOLDER: Your relationship with anime - favorites, recommendations, what draws you to it.]',
-    heroImage: '/images/interests/anime.jpg',
-  },
-  {
-    id: 'singapore',
-    location: 'Singapore',
-    coordinates: {
-      lat: 1.3521,
-      lng: 103.8198,
-      display: "1.3521°N, 103.8198°E"
-    },
-    category: 'interests',
-    title: 'Crazy Rich Asians',
-    subtitle: 'Favorite Movie',
-    description: '[PLACEHOLDER: Why this movie matters to you, representation, favorite scenes.]',
-    heroImage: '/images/interests/cra.jpg',
   },
 
   // ============ BUCKET LIST ============

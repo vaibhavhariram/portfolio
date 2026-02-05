@@ -1,36 +1,48 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, MapPin, Book, Gamepad2, Music, Film } from 'lucide-react';
+import { ArrowLeft, MapPin, Music, Shirt, Building2, Home } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Interests',
+  description: 'Travel, GeoGuessr, international music, Tamil culture, soccer jerseys, real estate.',
+};
 
 const interests = [
   {
     category: 'Travel',
     icon: MapPin,
-    items: ['Japan', 'Iceland', 'Portugal', 'New Zealand'],
-    description: 'Places I\'ve visited or dream of exploring. I love discovering new cities and cultures.',
+    items: ['Antarctica', 'Prague', 'Ho Chi Minh City', 'and more'],
+    description: 'I love discovering new cities and cultures. Winter 2025 in Antarctica was a once-in-a-lifetime experience; recent trips include Prague and Vietnam.',
   },
   {
-    category: 'Reading',
-    icon: Book,
-    items: ['Urban design', 'Science fiction', 'History', 'Technology'],
-    description: 'Currently reading: [Book Title]. Always looking for recommendations.',
+    category: 'GeoGuessr',
+    icon: MapPin,
+    items: ['Geography', 'Exploration', 'Maps'],
+    description: 'Putting geography and spatial intuition to the test. Always up for a round.',
   },
   {
-    category: 'Gaming',
-    icon: Gamepad2,
-    items: ['Strategy games', 'City builders', 'Puzzle games'],
-    description: 'Favorites include Cities: Skylines, Civilization, and Portal.',
-  },
-  {
-    category: 'Music',
+    category: 'International Music',
     icon: Music,
-    items: ['Electronic', 'Jazz', 'Indie', 'Classical'],
-    description: 'Always listening to music while coding. Big fan of ambient and lo-fi.',
+    items: ['Across genres and regions'],
+    description: 'Always listening—from coding sessions to exploring new artists and sounds from around the world.',
   },
   {
-    category: 'Film & TV',
-    icon: Film,
-    items: ['Documentaries', 'Sci-fi', 'Drama'],
-    description: 'Recent favorites: [Film/Show names]. Love anything with great world-building.',
+    category: 'Tamil Culture',
+    icon: Home,
+    items: ['Heritage', 'Tamil Nadu', 'Family roots'],
+    description: 'Connection to Tamil Nadu and my roots. Hometown and culture that shape who I am.',
+  },
+  {
+    category: 'Soccer Jerseys',
+    icon: Shirt,
+    items: ['Chelsea FC', 'Chicago sports', 'Collecting'],
+    description: 'Chelsea FC fan—up the Chels! Also grew up on Bulls and Bears. Love collecting jerseys and following the game.',
+  },
+  {
+    category: 'Real Estate',
+    icon: Building2,
+    items: ['Urban development', 'Cities', 'Planning'],
+    description: 'Fascinated by real estate, how cities develop, and the intersection of planning and technology.',
   },
 ];
 
@@ -72,13 +84,19 @@ export default function InterestsPage() {
         })}
       </div>
 
-      <div className="pt-8">
+      <div className="pt-8 flex flex-wrap items-center gap-4">
         <Link 
           href="/traditional" 
           className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Back
+        </Link>
+        <Link 
+          href="/" 
+          className="text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors"
+        >
+          View on map →
         </Link>
       </div>
     </div>
