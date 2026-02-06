@@ -20,9 +20,9 @@
   --bg-elevated: #eaeaea;
   --border: #e0e0e0;
 
-  --text-primary: #0a0a0f;
-  --text-secondary: #2d2d2d;
-  --text-muted: #4a4a4a;
+  --text-primary: #000000;
+  --text-secondary: #0a0a0f;
+  --text-muted: #1a1a1a;
 
   /* Map */
   --map-lines: rgba(255, 255, 255, 0.6);
