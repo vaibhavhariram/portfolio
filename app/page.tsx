@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import TypewriterHeader from '@/components/TypewriterHeader';
+import ThemeToggle from '@/components/ThemeToggle';
 
 /**
  * Minimal, text-first homepage inspired by dris.one.
@@ -8,16 +10,17 @@ import Link from 'next/link';
  */
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f] text-[var(--text-primary)] px-6 py-12 md:py-16">
-      <div className="max-w-2xl mx-auto space-y-12">
+    <main className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] px-6 py-12 md:py-16 relative">
+      <div className="fixed top-4 right-4 z-10">
+        <ThemeToggle />
+      </div>
+      <div className="max-w-2xl mx-auto space-y-12 font-mono">
         {/* Intro */}
         <section className="space-y-3">
-          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase font-mono">
             hey, i&apos;m
           </p>
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Vaibhav Hariram
-          </h1>
+          <TypewriterHeader />
         </section>
 
         {/* Contact / directory */}
@@ -57,24 +60,32 @@ export default function Home() {
               linkedin
             </Link>
             <Link
-              href="https://drive.google.com/file/d/1JoSVyfBiNNh7OJUcljQZO0zg6Q4sCHL-/view?usp=sharing"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
             >
               resume
             </Link>
+            <Link
+              href="https://scholar.google.com/citations?hl=en&user=WHbznusAAAAJ&view_op=list_works&citft=1&citft=2&citft=3&email_for_op=vaibhuhariram%40gmail.com&authuser=1&gmla=APjjwualsgUMB6FhfAmFp9WCR3ykRFC0bb8qKX13or6Abi00hkINUQ9yY645njGkgIY9SjVay62EY7WgzB2W7BrOiwWKkWsJB2DaQdzOP2fHpGZELmeiOuKHkIdQg0zfLIWa_aopdDCP_pLpitbBmyZAzvt7G2nT8ZWagaLNk-ASjfOeuqTuliPqJhCES2lE-S_5EQW7hNSjopzpaXQYH41bBULgGIpYK6nTD992c9_oLRt59f0MYUCYjBTZPZhhLuQvJdVR_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+            >
+              scholar
+            </Link>
           </div>
         </section>
 
-        {/* Achievements / headline work */}
+        {/* Intro */}
         <section className="space-y-3">
           <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
-            a few things i&apos;ve done
+            an intro
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
-              founding engineer at{' '}
+              ceo at{' '}
               <span className="text-[var(--text-primary)]">Paprika</span>, building a zoning
               intelligence system for 150k+ san francisco parcels with postgis + rag pipelines.
             </li>
@@ -91,21 +102,12 @@ export default function Home() {
               , working on gis-driven tools for freight rail operations and terminal workflows.
             </li>
             <li>
-              b.a. computer science @{' '}
-              <Link
-                href="https://www.reddit.com/r/ApplyingToCollege/comments/fq8esl/make_me_hate_stanford_why_stanford_is_overrated/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-              >
-                uc berkeley
-              </Link>
-              {' '}with a minor in urban/city planning (gpa 3.9).
+              studying cs @ berkeley
             </li>
             <li>
-              project manager @ ucb eecs, lead researcher on a team using multi-spectral satellite
+              research project manager @ ucb eecs, heading a team using multi-spectral satellite
               imagery (ndvi, ndwi, lst) to detect crypto mining developments in el salvador (potts
-              lab, berkeley).
+              lab).
             </li>
           </ul>
         </section>
@@ -136,12 +138,52 @@ export default function Home() {
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
-              memorized every world capital at age 2. mass applause from indian aunties. zero
-              practical applications since.
+              memorized every{' '}
+              <Link
+                href="https://www.sporcle.com/games/g/worldcapitals"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                world capital
+              </Link>
+              {' '}at age 2. mass applause from indian aunties. zero practical applications since.
             </li>
             <li>
-              represented team usa at the 2024 international geography olympiad. we got third. i
-              peaked at 19.
+              played trevor rainbolt in{' '}
+              <Link
+                href="https://openguessr.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                ranked geoguessr
+              </Link>
+              . got absolutely cooked tho
+            </li>
+            <li>
+              former international geography olympiad{' '}
+              <Link
+                href="https://protobowl.com/geography"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                competitor
+              </Link>
+              .
+            </li>
+            <li>
+              played the carnatic{' '}
+              <Link
+                href="https://darbar.org/the-violin-a-western-instrument-takes-centre-stage-in-carnatic-classical/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                violin
+              </Link>
+              {' '}for 10 years
             </li>
             <li>
               once chased my bag on a{' '}
@@ -190,8 +232,7 @@ export default function Home() {
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
-              looking for sf housing for summer 2026. budget: intern salary. requirements: shower
-              and kitchen in different rooms.
+              looking for sf housing for summer 2026 to scale and build wherever and whatever i can
             </li>
             <li>
               building{' '}
@@ -205,26 +246,61 @@ export default function Home() {
               </Link>
             </li>
             <li>probably on bart right now</li>
+            <li>still thinking about that caleb williams throw…</li>
           </ul>
         </section>
 
-        {/* Previous / other things */}
+        {/* Some other things */}
         <section className="space-y-3">
           <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
             some other things
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
-              coursework: data structures, discrete math, structure of computer programs, intro to
-              internet protocols.
+              coursework: data structures, discrete math, structure of computer programs, computer
+              architecture, probably more ai/ml stuff if i feel like it
             </li>
             <li>
               tools: python, typescript, react/next.js, postgresql/postgis, xgboost, scikit-learn,
-              google earth engine, aws, docker.
+              all sorts of gis software, aws, docker
             </li>
             <li>
-              interests: cities & transit, maps, tamil culture, soccer jerseys, real estate, and
-              whatever new thing i&apos;m learning this month.
+              interests: cities & transit, maps, tamil culture, soccer jerseys, geoguessr, chicago
+              sports, and international music. a little less frequently, south indian movies, home
+              decor, sketching, online chess, and sparkling water.
+            </li>
+          </ul>
+        </section>
+
+        {/* Other things - anime, spotify */}
+        <section className="space-y-3">
+          <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+            other things
+          </p>
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <li>
+              i used to watch{' '}
+              <Link
+                href="https://anilist.co/user/vaibhavhariram/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                anime
+              </Link>
+              {' '}a little bit
+            </li>
+            <li>
+              roast my{' '}
+              <Link
+                href="https://open.spotify.com/user/y1b8q06v7nfj7vycxi4huo70u"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+              >
+                spotify
+              </Link>
+              {' '}playlists
             </li>
           </ul>
         </section>
