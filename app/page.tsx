@@ -81,16 +81,16 @@ export default function Home() {
         {/* Intro */}
         <section className="space-y-3">
           <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
-            an intro
+            intro
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
-              ceo at{' '}
-              <span className="text-[var(--text-primary)]">Paprika</span>, building a zoning
-              intelligence system for 150k+ san francisco parcels with postgis + rag pipelines.
+              building{' '}
+              <span className="text-[var(--text-primary)]">Legion</span>, a geospatial intelligence
+              layer for defense tech
             </li>
             <li>
-              software engineering intern at{' '}
+              prev. swe at{' '}
               <Link
                 href="https://public.railinc.com/"
                 target="_blank"
@@ -99,56 +99,55 @@ export default function Home() {
               >
                 Railinc
               </Link>
-              , working on gis-driven tools for freight rail operations and terminal workflows.
+              , working on gis-driven tools for freight rail operations and terminal workflows
             </li>
             <li>
               studying cs @ berkeley
             </li>
             <li>
-              research project manager @ ucb eecs, heading a team using multi-spectral satellite
-              imagery (ndvi, ndwi, lst) to detect crypto mining developments in el salvador (potts
-              lab).
+              doing llm tool research for berkeley&apos;s gorilla project (sky computing lab, RISE,
+              BAIR)
+            </li>
+            <li>
+              researcher @ ucb eecs, working on a team conducting ML satellite imagery to detect
+              crypto mining developments in el salvador (potts lab).
             </li>
           </ul>
         </section>
 
-        {/* Projects / research */}
+        {/* Personal projects */}
         <section className="space-y-3">
           <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
-            projects & research
+            personal projects
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
-              <span className="text-[var(--text-primary)]">Atlas</span> — predictive multi-modal
-              transportation router over 500k+ road segments, combining dijkstra/a*/ch with
-              xgboost traffic models for sub-100ms queries.
+              <span className="text-[var(--text-primary)]">atlas</span> — predictive multi-modal
+              transportation router combining dijkstra/a*/ch with traffic models
             </li>
             <li>
-              <span className="text-[var(--text-primary)]">FireGraph</span> — real-time fire risk
-              visualization platform combining live fire perimeters, winds, and population density
-              to surface high-risk evacuation corridors.
+              <span className="text-[var(--text-primary)]">firegraph</span> — real-time fire risk
+              visualization platform to find high-risk evacuation corridors.
+            </li>
+            <li>
+              <span className="text-[var(--text-primary)]">roadsense</span> — computer vision system
+              that automatically finds road damage from dashcam video and maps it for cities to fix
+              faster.
+            </li>
+            <li>
+              <span className="text-[var(--text-primary)]">paprika</span> — zoning intelligence
+              lookup for san francisco real estate + properties.
             </li>
           </ul>
         </section>
 
-        {/* Lore / fun facts */}
+        {/* Lore */}
         <section className="space-y-3">
           <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
             lore
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-            <li>
-              memorized every{' '}
-              <Link
-                href="https://www.sporcle.com/games/g/worldcapitals"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-              >
-                world capital
-              </Link>
-              {' '}at age 2. mass applause from indian aunties. zero practical applications since.
-            </li>
+            <li>pretty good at geography trivia</li>
             <li>
               played trevor rainbolt in{' '}
               <Link
@@ -162,18 +161,6 @@ export default function Home() {
               . got absolutely cooked tho
             </li>
             <li>
-              former international geography olympiad{' '}
-              <Link
-                href="https://protobowl.com/geography"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-              >
-                competitor
-              </Link>
-              .
-            </li>
-            <li>
               played the carnatic{' '}
               <Link
                 href="https://darbar.org/the-violin-a-western-instrument-takes-centre-stage-in-carnatic-classical/"
@@ -185,19 +172,7 @@ export default function Home() {
               </Link>
               {' '}for 10 years
             </li>
-            <li>
-              once chased my bag on a{' '}
-              <Link
-                href="https://www.caltrain.com/rider-information/lost-and-found"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-              >
-                caltrain
-              </Link>
-              {' '}from redwood city to sf in a $100 uber going 100mph. got it back with 30 seconds
-              to spare.
-            </li>
+            <li>huge chelsea fan + chicago sports</li>
             <li>
               grew up in{' '}
               <Link
@@ -213,15 +188,14 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* TL;DR / story */}
+        {/* TL;DR */}
         <section className="space-y-3">
           <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
             tl;dr
           </p>
           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-            cities are broken and i want to fix them with ai. most of my work is at the intersection
-            of geospatial data, machine learning, and urban planning—which is a fancy way of saying
-            i read zoning codes so you don&apos;t have to.
+            i love geospatial ai/ml and geotech- most of my work is at the intersection of
+            geospatial data, machine learning, and applications of the field
           </p>
         </section>
 
@@ -231,21 +205,7 @@ export default function Home() {
             currently
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-            <li>
-              looking for sf housing for summer 2026 to scale and build wherever and whatever i can
-            </li>
-            <li>
-              building{' '}
-              <Link
-                href="https://paprika.nu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-              >
-                paprika.nu
-              </Link>
-            </li>
-            <li>probably on bart right now</li>
+            <li>berkeley to scale and build wherever and whatever i can</li>
             <li>still thinking about that caleb williams throw…</li>
           </ul>
         </section>
@@ -257,27 +217,39 @@ export default function Home() {
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
             <li>
-              coursework: data structures, discrete math, structure of computer programs, computer
-              architecture, probably more ai/ml stuff if i feel like it
+              coursework: data structures, discrete math, structure of computer programs, networking
+              and internet protocols, probably more ai/ml
             </li>
             <li>
               tools: python, typescript, react/next.js, postgresql/postgis, xgboost, scikit-learn,
               all sorts of gis software, aws, docker
             </li>
             <li>
-              interests: cities & transit, maps, tamil culture, soccer jerseys, geoguessr, chicago
-              sports, and international music. a little less frequently, south indian movies, home
-              decor, sketching, online chess, and sparkling water.
+              interests: cities and public transportation, collecting old maps, tamil culture,
+              soccer jerseys, geoguessr, chicago sports, and international music.
+            </li>
+            <li>
+              a little less frequently, south indian movies, home decor, sketching, online chess,
+              and sparkling water.
             </li>
           </ul>
         </section>
 
-        {/* Other things - anime, spotify */}
+        {/* Other things */}
         <section className="space-y-3">
           <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
             other things
           </p>
           <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <li>
+              favorite artist(s): calvin harris, ariana grande, aespa, anirudh ravichander, cocteau
+              twins
+            </li>
+            <li>
+              favorite tv show(s): HIMYM, parasyte, business proposal
+            </li>
+            <li>favorite place in the bay: half moon bay</li>
+            <li>favorite book: crazy rich asians trilogy (not the movie)</li>
             <li>
               i used to watch{' '}
               <Link
@@ -290,6 +262,9 @@ export default function Home() {
               </Link>
               {' '}a little bit
             </li>
+            <li>trying to learn how to dj and cook (or both at the same time)</li>
+            <li>will run a marathon this year</li>
+            <li>trying to attend more hackathons</li>
             <li>
               roast my{' '}
               <Link

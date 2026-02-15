@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Newsreader, Space_Grotesk } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -45,11 +46,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} ${newsreader.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} ${newsreader.variable} ${spaceGrotesk.variable} antialiased font-mono`}
       >
-        {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('traditional-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');})();`,
+          }}
+        />
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

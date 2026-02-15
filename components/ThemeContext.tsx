@@ -21,6 +21,11 @@ function getInitialTheme(): Theme {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(getInitialTheme);
 
+  // Sync theme to document for global CSS [data-theme]
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   const setTheme = useCallback((newTheme: Theme) => {
     setThemeState(newTheme);
     if (typeof window !== 'undefined') {
