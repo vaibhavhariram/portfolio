@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Headings use **Alliance No 2** (loaded via `@font-face` from a CDN). To use Alliance No 2 Regular locally (e.g. from [MyFonts](https://www.myfonts.com/products/alliance-no2-pack-package-458531) or other sources), add `AllianceNo2-Regular.otf` (or `.woff2`) to `public/fonts/` and add a matching `@font-face` in `app/globals.css` with `src: url('/fonts/AllianceNo2-Regular.otf')` so it overrides the CDN.
 
 ## Learn More
 

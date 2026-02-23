@@ -1,40 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Newsreader, Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
+// Google Sans isn't on Google Fonts; Inter is a clean, code-friendly sans (similar vibe).
 const inter = Inter({
-  variable: "--font-inter",
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Vaibhav Hariram | Portfolio",
-  description: "UC Berkeley CS & Geography '28 · Geospatial AI/ML · Building AI for cities, intelligence for the physical world",
+  title: "Vaibhav Hariram",
+  description: "Building the next frontier of dev tools. CS @ Berkeley. LLM + geospatial research.",
   openGraph: {
-    title: "Vaibhav Hariram | Portfolio",
-    description: "UC Berkeley CS & Geography '28 · Geospatial AI/ML",
+    title: "Vaibhav Hariram",
+    description: "Building the next frontier of dev tools. CS @ Berkeley.",
     type: "website",
   },
 };
@@ -46,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} ${newsreader.variable} ${spaceGrotesk.variable} antialiased`}
-      >
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
