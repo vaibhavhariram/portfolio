@@ -20,16 +20,18 @@ export default function Home() {
         {/* intro */}
         <Section>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
-            building the next frontier of dev tools — stay tuned for a little something called Kado
+            building paprika — runtime governance for ai agents. trace capture, policy enforcement, deterministic replay. deployed to 25+ engineering teams.
           </p>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
-            prev. swe intern at Railinc (2x), building gis-driven tools for freight rail operations + terminal workflows
+            prev. swe intern @ railinc (summer &apos;24 + &apos;25). react + java/spring boot on the RIGIS platform. etl pipeline processing 100K+ rail stations.
           </p>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
             studying cs @ berkeley
           </p>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
-            doing llm tool research for berkeley&apos;s Gorilla Project (affiliated with BAIR + Sky Computing Lab)
+            fine-tuned 7B–13B LLMs on 1.2M samples, distributed training across 4×A100s for berkeley&apos;s{' '}
+            <a href="https://gorilla.cs.berkeley.edu" target="_blank" rel="noopener noreferrer" className="text-white hover:underline underline-offset-2">gorilla</a>{' '}
+            project (BAIR). cited by nvidia, anthropic, openai teams.
           </p>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
             researcher @ uc berkeley (eecs), satellite imagery + ML to detect crypto mining development in el salvador (Potts Lab)
@@ -39,37 +41,36 @@ export default function Home() {
         {/* personal projects */}
         <Section title="personal projects">
           <ProjectItem
-            name="atlas"
-            description="predictive multi-modal transportation router combining dijkstra/a*/contraction hierarchies with traffic models"
-            stack="stack: python • graph algos • routing"
+            name="routeX"
+            description="routing engine that does in <1ms what dijkstra does in 45. contraction hierarchies over 280K bay area road segments, postgis geofencing, xgboost eta predictions."
+            stack="stack: c++ • postgis • xgboost • osm"
           />
           <ProjectItem
             name="swandb"
-            description="real-time visualization platform to find high-risk evacuation corridors"
-            stack="stack: (see repo)"
+            description="feature store that actually respects time. pit-correct joins, <8ms online serving, parquet storage that doesn't lie to your model."
+            stack="stack: duckdb • redis • parquet"
           />
           <ProjectItem
-            name="roadsense (aka Camino)"
-            description="CV system that finds road damage from dashcam video + maps it for cities"
-            stack="stack: pytorch • yolov8 • opencv"
+            name="chronicle"
+            description="llm inference server — 32% throughput over hf baseline. micro-batching + kv-cache reuse. <200ms p95 at 100 concurrency."
+            stack="stack: python • cuda • mistral-7b"
           />
           <ProjectItem
-            name="paprika"
-            description="zoning intelligence lookup for sf properties"
-            stack="stack: postgresql • postgis • next.js"
+            name="snare"
+            description="(see repo)"
           />
         </Section>
 
         {/* open source */}
         <Section title="open source">
           <p className="text-[15px] leading-relaxed text-[#e0e0e0] py-1">
-            geofilter — geojson spatial filter library (~1m+ points/sec)
+            vLLM / PyTorch — merged performance optimization + distributed benchmarking PRs upstream
           </p>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0] py-1">
-            reqbench — cli load testing (p50/p95/p99 + throughput)
+            geofilter — numba jit point-in-polygon engine. 10M points in 0.58s. wrote it because existing spatial filters were too slow and i was impatient.
           </p>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0] py-1">
-            contributed to HF Transformers + PostGIS
+            reqbench — load-testing cli sustaining 4.8K req/sec at 500 concurrency with p95/error ci gating
           </p>
         </Section>
 
@@ -112,10 +113,19 @@ export default function Home() {
         {/* some other things */}
         <Section title="some other things">
           <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
-            coursework: data structures, discrete math, structure of computer programs, networking + internet protocols, computer vision, data science, probably more ai/ml
+            coursework: data structures, algorithms, discrete math, structure of computer programs, a.i., machine learning, networking + internet protocols, database systems, computer vision, data science, probably more ai/ml
           </p>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
-            tools: python, typescript, react/next.js, postgresql/postgis, pytorch, xgboost, scikit-learn, gis tooling, aws, docker
+            languages: python, c++, typescript, java, sql
+          </p>
+          <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
+            ml + systems: FSDP, AMP, CUDA, KV-cache, distributed fine-tuning, eval pipelines, quantization
+          </p>
+          <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
+            frameworks: react, fastapi, spring boot, node.js, duckdb, langgraph, pytorch, xgboost
+          </p>
+          <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
+            infra: aws, docker, redis, postgresql, postgis, gdal, arcgis pro, linux, ci/cd
           </p>
           <p className="text-[15px] leading-relaxed text-[#e0e0e0]">
             interests: cities + public transportation, collecting old maps, tamil culture, soccer jerseys, geoguessr, chicago sports, international music

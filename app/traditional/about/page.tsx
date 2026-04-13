@@ -34,7 +34,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-[var(--text-primary)] font-medium">University of California, Berkeley</h3>
               <p className="text-sm text-[var(--text-muted)]">B.A. in Computer Science · Minor in Urban/City Planning · Berkeley, CA · GPA: 3.9</p>
-              <p className="text-sm text-[var(--text-muted)] mt-1">Relevant coursework: Data Structures, Discrete Math, Structure of Computer Programs, Introduction to Internet Protocols</p>
+              <p className="text-sm text-[var(--text-muted)] mt-1">Relevant coursework: Data Structures, Algorithms, Discrete Math, Structure of Computer Programs, A.I., Machine Learning, Networking + Internet Protocols, Database Systems, Computer Vision, Data Science</p>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
         <div className="pt-4 border-t border-[var(--border)]">
           <h2 className="text-xl font-medium text-[var(--text-primary)] mb-4">Skills</h2>
           <div className="flex flex-wrap gap-2">
-            {['Python', 'Java', 'JavaScript', 'TypeScript', 'SQL', 'React', 'FastAPI', 'PostgreSQL', 'PostGIS', 'scikit-learn', 'XGBoost', 'AWS', 'Docker', 'GDAL', 'Google Earth Engine', 'GeoPandas'].map((skill) => (
+            {['Python', 'C++', 'TypeScript', 'Java', 'SQL', 'React', 'FastAPI', 'Spring Boot', 'Node.js', 'PyTorch', 'XGBoost', 'DuckDB', 'LangGraph', 'FSDP', 'CUDA', 'AWS', 'Docker', 'Redis', 'PostgreSQL', 'PostGIS', 'GDAL', 'ArcGIS Pro', 'Linux'].map((skill) => (
               <span 
                 key={skill}
                 className="px-3 py-1 text-sm bg-[var(--bg-elevated)] border border-[var(--border)] rounded-full text-[var(--text-secondary)]"
