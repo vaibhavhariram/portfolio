@@ -7,10 +7,6 @@ import AnimatedBackground from '@/components/AnimatedBackground';
 import ScrollReveal from '@/components/ScrollReveal';
 import AnimatedLink from '@/components/AnimatedLink';
 
-/**
- * Minimal, text-first homepage inspired by dris.one.
- * Single scrollable page, no map – focused on story and work.
- */
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] px-6 py-12 md:py-16 relative">
@@ -74,14 +70,6 @@ export default function Home() {
               >
                 resume
               </AnimatedLink>
-              <AnimatedLink
-                href="https://scholar.google.com/citations?hl=en&user=WHbznusAAAAJ&view_op=list_works&citft=1&citft=2&citft=3&email_for_op=vaibhuhariram%40gmail.com&authuser=1&gmla=APjjwualsgUMB6FhfAmFp9WCR3ykRFC0bb8qKX13or6Abi00hkINUQ9yY645njGkgIY9SjVay62EY7WgzB2W7BrOiwWKkWsJB2DaQdzOP2fHpGZELmeiOuKHkIdQg0zfLIWa_aopdDCP_pLpitbBmyZAzvt7G2nT8ZWagaLNk-ASjfOeuqTuliPqJhCES2lE-S_5EQW7hNSjopzpaXQYH41bBULgGIpYK6nTD992c9_oLRt59f0MYUCYjBTZPZhhLuQvJdVR___"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
-              >
-                scholar
-              </AnimatedLink>
             </div>
           </section>
         </ScrollReveal>
@@ -94,20 +82,19 @@ export default function Home() {
             </p>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
               <li>
-                building{' '}
+                currently building{' '}
                 <AnimatedLink
-                  href="https://usepaprika.co"
+                  href="https://paprika.nu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
                 >
                   paprika
                 </AnimatedLink>
-                , the execution layer for reliable AI agents — trace every run, enforce runtime policies,
-                and replay safely.
+                . runtime governance for ai agents. trace capture, policy enforcement, deterministic replay. deployed to 25+ b2b engineering teams.
               </li>
               <li>
-                prev. software engineering intern at{' '}
+                prev. swe intern @{' '}
                 <AnimatedLink
                   href="https://public.railinc.com/"
                   target="_blank"
@@ -116,209 +103,184 @@ export default function Home() {
                 >
                   Railinc
                 </AnimatedLink>
-                , working on gis-driven tools for freight rail operations and terminal workflows
+                {' '}(summer &apos;24 + &apos;25). react + java/spring boot on the RIGIS platform. etl pipeline processing 100K+ rail stations.
               </li>
               <li>
-                studying cs @ berkeley
+                studying cs @ berkeley (on leave)
               </li>
               <li>
-                llm tool research @{' '}
+                prev. MLE @{' '}
                 <AnimatedLink
-                  href="https://gorilla.cs.berkeley.edu"
+                  href="https://flywheel.dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
                 >
-                  gorilla project
+                  flywheel
                 </AnimatedLink>
-                , part of sky computing lab and BAIR
+                . the content engine for b2b SaaS teams. architected E2E MCP used by 10+ clients, wired voice, context, api keys, flags, and usage logging across 3 backend services.
               </li>
               <li>
-                research project manager @ ucb eecs,{' '}
+                contributor to{' '}
                 <AnimatedLink
-                  href="https://research.berkeley.edu/urap/"
+                  href="https://gorilla.cs.berkeley.edu/papers/bfcl.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
                 >
-                  heading a team
+                  BFCL
                 </AnimatedLink>
-                {' '}using multi-spectral satellite imagery (ndvi, ndwi, lst) to detect crypto mining
-                developments in el salvador (potts lab)
+                , the berkeley function calling leaderboard as part of RISE lab. drafted bfcl v5, a multimodal benchmark extension for agents → designed 9 perception-to-tool-call failure tests across audio/vision. cited by openai, nvidia, anthropic teams.
+              </li>
+              <li>
+                researcher @ uc berkeley (eecs), satellite imagery + ML to detect crypto mining development in el salvador (Potts Lab)
               </li>
             </ul>
           </section>
         </ScrollReveal>
 
-        {/* Personal projects */}
+        {/* Projects */}
         <ScrollReveal delay={0.3}>
           <section className="space-y-3">
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
-              projects & research
+              projects
             </p>
-            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
               <li>
-                <span className="text-[var(--text-primary)]">routeX</span> — predictive multi-modal
-                transportation router over 500k+ road segments, combining dijkstra/a*/ch with xgboost
-                traffic models for sub-100ms queries.
+                <div className="text-[var(--text-primary)] font-mono">routeX</div>
+                <div className="text-xs mt-1">sub-millisecond routing engine for real-time navigation. uses contraction hierarchies + xgboost traffic predictions to find optimal routes across 280K+ road segments in the bay area.</div>
+                <div className="text-xs text-[var(--text-muted)] mt-1">stack: c++ • postgis • xgboost • osm</div>
               </li>
               <li>
-                <span className="text-[var(--text-primary)]">swandb</span> — real-time fire risk
-                visualization platform combining live fire perimeters, winds, and population density to
-                surface high-risk evacuation corridors.
+                <div className="text-[var(--text-primary)] font-mono">swandb</div>
+                <div className="text-xs mt-1">point-in-time correct feature store with sub-8ms online serving. time-aware joins that actually work, no model training surprises.</div>
+                <div className="text-xs text-[var(--text-muted)] mt-1">stack: duckdb • redis • parquet</div>
+              </li>
+              <li>
+                <div className="text-[var(--text-primary)] font-mono">chronicle</div>
+                <div className="text-xs mt-1">llm inference server with 32% throughput improvement over huggingface baseline. micro-batching + kv-cache reuse for sub-200ms p95 at 100 concurrent requests.</div>
+                <div className="text-xs text-[var(--text-muted)] mt-1">stack: python • cuda • mistral-7b</div>
+              </li>
+            </ul>
+          </section>
+        </ScrollReveal>
+
+        {/* Open Source */}
+        <ScrollReveal delay={0.4}>
+          <section className="space-y-3">
+            <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
+              open source
+            </p>
+            <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
+              <li>
+                <div className="text-[var(--text-primary)] font-mono">vLLM / PyTorch</div>
+                <div className="text-xs mt-1">merged performance optimization + distributed benchmarking PRs upstream.</div>
+              </li>
+              <li>
+                <div className="text-[var(--text-primary)] font-mono">geofilter</div>
+                <div className="text-xs mt-1">numba jit point-in-polygon engine. 10M points in 0.58s. wrote it because existing spatial filters were too slow and i was impatient.</div>
+              </li>
+              <li>
+                <div className="text-[var(--text-primary)] font-mono">reqbench</div>
+                <div className="text-xs mt-1">load-testing cli sustaining 4.8K req/sec at 500 concurrency with p95/error ci gating.</div>
               </li>
             </ul>
           </section>
         </ScrollReveal>
 
         {/* Lore */}
-        <ScrollReveal delay={0.4}>
+        <ScrollReveal delay={0.5}>
           <section className="space-y-3">
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               lore
             </p>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-              <li>
-                memorized every{' '}
-                <AnimatedLink
-                  href="https://www.sporcle.com/games/g/worldcapitals"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-                >
-                  world capital
-                </AnimatedLink>
-                {' '}at age 2. mass applause from indian aunties. zero practical applications since.
-              </li>
-              <li>
-                played trevor rainbolt in{' '}
-                <AnimatedLink
-                  href="https://openguessr.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-                >
-                  ranked geoguessr
-                </AnimatedLink>
-                . got absolutely cooked tho.
-              </li>
-              <li>
-                former international geography olympiad{' '}
-                <AnimatedLink
-                  href="https://protobowl.com/geography"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-                >
-                  competitor
-                </AnimatedLink>
-                .
-              </li>
-              <li>
-                played the carnatic{' '}
-                <AnimatedLink
-                  href="https://darbar.org/the-violin-a-western-instrument-takes-centre-stage-in-carnatic-classical/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-                >
-                  violin
-                </AnimatedLink>
-                {' '}for 10 years.
-              </li>
-              <li>
-                once chased my bag on a caltrain from redwood city to sf in a $100 uber going 100mph.
-                got it back with 30 seconds to spare haha
-              </li>
+              <li>pretty good at geography trivia (top 1% sporcle, jetpunk player)</li>
+              <li>i run buzzer based comps @ iac</li>
+              <li>i&apos;ve urbexed every part of the bay and will travel anywhere for a skyline or sunset pic</li>
+              <li>played trevor rainbolt in ranked geoguessr. got absolutely cooked tho</li>
+              <li>played carnatic violin for 10 years</li>
+              <li>huge chelsea fan + chicago sports</li>
+              <li>been to 30+ countries and my dream is to visit every single one</li>
+              <li>have listened to 500 rap/rnb albums and will give better takes than anyone on the new releases</li>
             </ul>
           </section>
         </ScrollReveal>
 
         {/* TL;DR */}
-        <ScrollReveal delay={0.5}>
+        <ScrollReveal delay={0.6}>
           <section className="space-y-3">
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               tl;dr
             </p>
             <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-              i work on making AI systems run reliably in production. most of what i build sits between
-              the agent frameworks everyone writes and the observability tools everyone buys — the
-              runtime execution layer that keeps agents from burning tokens, looping, and breaking things.
+              i love AI and its applications across the entire stack. benchmarks, evals, observability, runtime, and its real time applications in the startup space is what i aim to understand perfectly one day. oh, and i love geospatial ai/ml + geotech: real systems people actually use
             </p>
           </section>
         </ScrollReveal>
 
         {/* Currently */}
-        <ScrollReveal delay={0.6}>
+        <ScrollReveal delay={0.7}>
           <section className="space-y-3">
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               currently
             </p>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-              <li>looking for sf housing for summer 2026 to scale and build wherever and whatever i can</li>
-              <li>
-                building{' '}
-                <AnimatedLink
-                  href="https://paprika.nu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-                >
-                  paprika.nu
-                </AnimatedLink>
-              </li>
-              <li>probably on bart right now</li>
+              <li>@ berkeley to scale and build wherever and whatever i can</li>
               <li>still thinking about that caleb williams throw…</li>
+              <li>saving money for asap rocky, don toliver, and world cup games</li>
+              <li>will bench 225 by the end of the year</li>
+              <li>about halfway done with the blind 75!</li>
+              <li>thailand summer 2026</li>
+              <li>stay tuned for record labs. building in music, my passion.</li>
             </ul>
           </section>
         </ScrollReveal>
 
         {/* Some other things */}
-        <ScrollReveal delay={0.7}>
+        <ScrollReveal delay={0.8}>
           <section className="space-y-3">
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               some other things
             </p>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
               <li>
-                coursework: data structures, discrete math, structure of computer programs, computer
-                architecture, probably more ai/ml stuff if i feel like it
+                coursework: data structures, algorithms, discrete math, structure of computer programs, a.i., machine learning, networking + internet protocols, database systems, computer vision, data science
               </li>
               <li>
-                tools: python, typescript, react/next.js, postgresql/postgis, xgboost, scikit-learn,
-                all sorts of gis software, aws, docker
+                languages: python, c++, typescript, java, sql
               </li>
               <li>
-                interests: cities & transit, maps, tamil culture, soccer jerseys, geoguessr, chicago
-                sports, and international music.
+                ml + systems: FSDP, AMP, CUDA, KV-cache, distributed fine-tuning, eval pipelines, quantization
               </li>
               <li>
-                a little less frequently, south indian movies, home decor, sketching, online chess,
-                and sparkling water.
+                frameworks: react, fastapi, spring boot, node.js, duckdb, langgraph, pytorch, xgboost
+              </li>
+              <li>
+                infra: aws, docker, redis, postgresql, postgis, gdal, arcgis pro, linux, ci/cd
+              </li>
+              <li>
+                interests: cities + public transportation, collecting old maps, tamil culture, soccer jerseys, geoguessr, chicago sports, all sorts of music
+              </li>
+              <li>
+                less frequently: south indian movies, home decor, sketching, online chess, sparkling water
               </li>
             </ul>
           </section>
         </ScrollReveal>
 
         {/* Other things */}
-        <ScrollReveal delay={0.8}>
+        <ScrollReveal delay={0.9}>
           <section className="space-y-3">
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               other things
             </p>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-              <li>
-                i used to watch{' '}
-                <AnimatedLink
-                  href="https://anilist.co/user/vaibhavhariram/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
-                >
-                  anime
-                </AnimatedLink>
-                {' '}a little bit
-              </li>
+              <li>used to watch anime a little bit</li>
+              <li>trying to learn to dj and cook (or both at the same time)</li>
+              <li>will run a marathon this year</li>
+              <li>decent at sketching</li>
+              <li>trying to attend more hackathons</li>
               <li>
                 roast my{' '}
                 <AnimatedLink
@@ -336,11 +298,10 @@ export default function Home() {
         </ScrollReveal>
 
         {/* Footer note */}
-        <ScrollReveal delay={0.9}>
+        <ScrollReveal delay={1.0}>
           <section className="pt-4 border-t border-[var(--border)] text-[var(--text-muted)] text-xs space-y-1">
             <p>
-              this page changes often. if you&apos;re reading this, feel free to reach out. if
-              you&apos;re from stanford, no.
+              this page changes often. if you&apos;re reading this, feel free to reach out.
             </p>
           </section>
         </ScrollReveal>
