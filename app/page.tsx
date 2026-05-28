@@ -83,10 +83,10 @@ export default function Home() {
               <li>
                 currently building{' '}
                 <AnimatedLink
-                  href="https://paprika.nu"
+                  href="https://usepaprika.co"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+                  className="underline underline-offset-2 hover:opacity-80"
                 >
                   paprika
                 </AnimatedLink>
@@ -98,7 +98,7 @@ export default function Home() {
                   href="https://public.railinc.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+                  className="underline underline-offset-2 hover:opacity-80"
                 >
                   Railinc
                 </AnimatedLink>
@@ -108,10 +108,10 @@ export default function Home() {
               <li>
                 prev. MLE @{' '}
                 <AnimatedLink
-                  href="https://flywheel.dev"
+                  href="https://flywheelos.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+                  className="underline underline-offset-2 hover:opacity-80"
                 >
                   flywheel
                 </AnimatedLink>
@@ -120,10 +120,10 @@ export default function Home() {
               <li>
                 contributor to{' '}
                 <AnimatedLink
-                  href="https://gorilla.cs.berkeley.edu/papers/bfcl.html"
+                  href="https://gorilla.cs.berkeley.edu"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+                  className="underline underline-offset-2 hover:opacity-80"
                 >
                   BFCL
                 </AnimatedLink>
@@ -142,17 +142,44 @@ export default function Home() {
             </p>
             <ul className="space-y-3">
               <li>
-                <div className="text-[var(--text-primary)] font-mono">routeX</div>
+                <div className="font-mono">
+                  <AnimatedLink
+                    href="https://github.com/vaibhavhariram/routeX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:opacity-80"
+                  >
+                    routeX
+                  </AnimatedLink>
+                </div>
                 <div className="mt-1">sub-millisecond routing engine for real-time navigation. uses contraction hierarchies + xgboost traffic predictions to find optimal routes across 280K+ road segments in the bay area.</div>
                 <div className="text-[var(--text-muted)] mt-1">stack: c++ • postgis • xgboost • osm</div>
               </li>
               <li>
-                <div className="text-[var(--text-primary)] font-mono">swandb</div>
+                <div className="font-mono">
+                  <AnimatedLink
+                    href="https://github.com/vaibhavhariram/swandb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:opacity-80"
+                  >
+                    swandb
+                  </AnimatedLink>
+                </div>
                 <div className="mt-1">point-in-time correct feature store with sub-8ms online serving. time-aware joins that actually work, no model training surprises.</div>
                 <div className="text-[var(--text-muted)] mt-1">stack: duckdb • redis • parquet</div>
               </li>
               <li>
-                <div className="text-[var(--text-primary)] font-mono">chronicle</div>
+                <div className="font-mono">
+                  <AnimatedLink
+                    href="https://github.com/vaibhavhariram/chronicle"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:opacity-80"
+                  >
+                    chronicle
+                  </AnimatedLink>
+                </div>
                 <div className="mt-1">llm inference server with 32% throughput improvement over huggingface baseline. micro-batching + kv-cache reuse for sub-200ms p95 at 100 concurrent requests.</div>
                 <div className="text-[var(--text-muted)] mt-1">stack: python • cuda • mistral-7b</div>
               </li>
@@ -168,15 +195,51 @@ export default function Home() {
             </p>
             <ul className="space-y-3">
               <li>
-                <div className="text-[var(--text-primary)] font-mono">vLLM / PyTorch</div>
+                <div className="font-mono">
+                  <AnimatedLink
+                    href="https://github.com/vllm-project/vllm/pull/37227"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:opacity-80"
+                  >
+                    vLLM
+                  </AnimatedLink>
+                  {' / '}
+                  <AnimatedLink
+                    href="https://github.com/pytorch/ao/pull/4270"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:opacity-80"
+                  >
+                    PyTorch
+                  </AnimatedLink>
+                </div>
                 <div className="mt-1">merged performance optimization + distributed benchmarking PRs upstream.</div>
               </li>
               <li>
-                <div className="text-[var(--text-primary)] font-mono">geofilter</div>
+                <div className="font-mono">
+                  <AnimatedLink
+                    href="https://github.com/vaibhavhariram/geofilter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:opacity-80"
+                  >
+                    geofilter
+                  </AnimatedLink>
+                </div>
                 <div className="mt-1">numba jit point-in-polygon engine. 10M points in 0.58s. wrote it because existing spatial filters were too slow and i was impatient.</div>
               </li>
               <li>
-                <div className="text-[var(--text-primary)] font-mono">reqbench</div>
+                <div className="font-mono">
+                  <AnimatedLink
+                    href="https://github.com/vaibhavhariram/reqbench"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:opacity-80"
+                  >
+                    reqbench
+                  </AnimatedLink>
+                </div>
                 <div className="mt-1">load-testing cli sustaining 4.8K req/sec at 500 concurrency with p95/error ci gating.</div>
               </li>
             </ul>
@@ -263,7 +326,7 @@ export default function Home() {
                   href="https://open.spotify.com/user/y1b8q06v7nfj7vycxi4huo70u"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+                  className="underline underline-offset-2 hover:opacity-80"
                 >
                   spotify
                 </AnimatedLink>
@@ -275,7 +338,7 @@ export default function Home() {
                   href="https://anilist.co/user/vaibhavhariram/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+                  className="underline underline-offset-2 hover:opacity-80"
                 >
                   anime
                 </AnimatedLink>

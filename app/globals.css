@@ -3,16 +3,16 @@
 :root {
   --bg-primary: #0a0a0f;
   --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --text-muted: #6b6b6b;
+  --text-secondary: #ffffff;
+  --text-muted: #a0a0a0;
   --border: #2a2a2f;
 }
 
 html[data-theme="light"] {
   --bg-primary: #ffffff;
   --text-primary: #0a0a0f;
-  --text-secondary: #5a5a5a;
-  --text-muted: #888888;
+  --text-secondary: #0a0a0f;
+  --text-muted: #666666;
   --border: #e0e0e0;
 }
 
