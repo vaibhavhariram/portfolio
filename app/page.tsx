@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import TypewriterHeader from '@/components/TypewriterHeader';
 import ThemeToggle from '@/components/ThemeToggle';
 import AnimatedBackground from '@/components/AnimatedBackground';
@@ -14,11 +13,11 @@ export default function Home() {
       <div className="fixed top-4 right-4 z-10">
         <ThemeToggle />
       </div>
-      <div className="max-w-2xl mx-auto space-y-12 font-mono relative z-0">
+      <div className="max-w-2xl mx-auto space-y-12 font-mono relative z-0 text-sm text-[var(--text-secondary)]">
         {/* Intro */}
         <ScrollReveal>
           <section className="space-y-3">
-            <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase font-mono">
+            <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               hey, i&apos;m
             </p>
             <TypewriterHeader />
@@ -31,7 +30,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               directory
             </p>
-            <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[var(--text-secondary)]">
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
               <AnimatedLink
                 href="mailto:vaibhavhariram@berkeley.edu"
                 className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
@@ -80,7 +79,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               intro
             </p>
-            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <ul className="space-y-2">
               <li>
                 currently building{' '}
                 <AnimatedLink
@@ -91,7 +90,7 @@ export default function Home() {
                 >
                   paprika
                 </AnimatedLink>
-                . runtime governance for ai agents. trace capture, policy enforcement, deterministic replay. deployed to 25+ b2b engineering teams.
+                {' '}— runtime governance for ai agents. trace capture, policy enforcement, deterministic replay. deployed to 25+ b2b engineering teams.
               </li>
               <li>
                 prev. swe intern @{' '}
@@ -105,9 +104,7 @@ export default function Home() {
                 </AnimatedLink>
                 {' '}(summer &apos;24 + &apos;25). react + java/spring boot on the RIGIS platform. etl pipeline processing 100K+ rail stations.
               </li>
-              <li>
-                studying cs @ berkeley (on leave)
-              </li>
+              <li>studying cs @ berkeley (on leave)</li>
               <li>
                 prev. MLE @{' '}
                 <AnimatedLink
@@ -118,7 +115,7 @@ export default function Home() {
                 >
                   flywheel
                 </AnimatedLink>
-                . the content engine for b2b SaaS teams. architected E2E MCP used by 10+ clients, wired voice, context, api keys, flags, and usage logging across 3 backend services.
+                {' '}— the content engine for b2b SaaS teams. architected E2E MCP used by 10+ clients, wired voice, context, api keys, flags, and usage logging across 3 backend services.
               </li>
               <li>
                 contributor to{' '}
@@ -130,11 +127,9 @@ export default function Home() {
                 >
                   BFCL
                 </AnimatedLink>
-                , the berkeley function calling leaderboard as part of RISE lab. drafted bfcl v5, a multimodal benchmark extension for agents → designed 9 perception-to-tool-call failure tests across audio/vision. cited by openai, nvidia, anthropic teams.
+                {' '}— the berkeley function calling leaderboard as part of RISE lab. drafted bfcl v5, a multimodal benchmark extension for agents → designed 9 perception-to-tool-call failure tests across audio/vision. cited by openai, nvidia, anthropic teams.
               </li>
-              <li>
-                researcher @ uc berkeley (eecs), satellite imagery + ML to detect crypto mining development in el salvador (Potts Lab)
-              </li>
+              <li>researcher @ uc berkeley (eecs), satellite imagery + ML to detect crypto mining development in el salvador (Potts Lab)</li>
             </ul>
           </section>
         </ScrollReveal>
@@ -145,21 +140,21 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               projects
             </p>
-            <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
+            <ul className="space-y-3">
               <li>
                 <div className="text-[var(--text-primary)] font-mono">routeX</div>
-                <div className="text-xs mt-1">sub-millisecond routing engine for real-time navigation. uses contraction hierarchies + xgboost traffic predictions to find optimal routes across 280K+ road segments in the bay area.</div>
-                <div className="text-xs text-[var(--text-muted)] mt-1">stack: c++ • postgis • xgboost • osm</div>
+                <div className="mt-1">sub-millisecond routing engine for real-time navigation. uses contraction hierarchies + xgboost traffic predictions to find optimal routes across 280K+ road segments in the bay area.</div>
+                <div className="text-[var(--text-muted)] mt-1">stack: c++ • postgis • xgboost • osm</div>
               </li>
               <li>
                 <div className="text-[var(--text-primary)] font-mono">swandb</div>
-                <div className="text-xs mt-1">point-in-time correct feature store with sub-8ms online serving. time-aware joins that actually work, no model training surprises.</div>
-                <div className="text-xs text-[var(--text-muted)] mt-1">stack: duckdb • redis • parquet</div>
+                <div className="mt-1">point-in-time correct feature store with sub-8ms online serving. time-aware joins that actually work, no model training surprises.</div>
+                <div className="text-[var(--text-muted)] mt-1">stack: duckdb • redis • parquet</div>
               </li>
               <li>
                 <div className="text-[var(--text-primary)] font-mono">chronicle</div>
-                <div className="text-xs mt-1">llm inference server with 32% throughput improvement over huggingface baseline. micro-batching + kv-cache reuse for sub-200ms p95 at 100 concurrent requests.</div>
-                <div className="text-xs text-[var(--text-muted)] mt-1">stack: python • cuda • mistral-7b</div>
+                <div className="mt-1">llm inference server with 32% throughput improvement over huggingface baseline. micro-batching + kv-cache reuse for sub-200ms p95 at 100 concurrent requests.</div>
+                <div className="text-[var(--text-muted)] mt-1">stack: python • cuda • mistral-7b</div>
               </li>
             </ul>
           </section>
@@ -171,18 +166,18 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               open source
             </p>
-            <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
+            <ul className="space-y-3">
               <li>
                 <div className="text-[var(--text-primary)] font-mono">vLLM / PyTorch</div>
-                <div className="text-xs mt-1">merged performance optimization + distributed benchmarking PRs upstream.</div>
+                <div className="mt-1">merged performance optimization + distributed benchmarking PRs upstream.</div>
               </li>
               <li>
                 <div className="text-[var(--text-primary)] font-mono">geofilter</div>
-                <div className="text-xs mt-1">numba jit point-in-polygon engine. 10M points in 0.58s. wrote it because existing spatial filters were too slow and i was impatient.</div>
+                <div className="mt-1">numba jit point-in-polygon engine. 10M points in 0.58s. wrote it because existing spatial filters were too slow and i was impatient.</div>
               </li>
               <li>
                 <div className="text-[var(--text-primary)] font-mono">reqbench</div>
-                <div className="text-xs mt-1">load-testing cli sustaining 4.8K req/sec at 500 concurrency with p95/error ci gating.</div>
+                <div className="mt-1">load-testing cli sustaining 4.8K req/sec at 500 concurrency with p95/error ci gating.</div>
               </li>
             </ul>
           </section>
@@ -194,7 +189,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               lore
             </p>
-            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <ul className="space-y-2">
               <li>pretty good at geography trivia (top 1% sporcle, jetpunk player)</li>
               <li>i run buzzer based comps @ iac</li>
               <li>i&apos;ve urbexed every part of the bay and will travel anywhere for a skyline or sunset pic</li>
@@ -213,7 +208,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               tl;dr
             </p>
-            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            <p className="leading-relaxed">
               i love AI and its applications across the entire stack. benchmarks, evals, observability, runtime, and its real time applications in the startup space is what i aim to understand perfectly one day. oh, and i love geospatial ai/ml + geotech: real systems people actually use
             </p>
           </section>
@@ -225,7 +220,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               currently
             </p>
-            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <ul className="space-y-2">
               <li>@ berkeley to scale and build wherever and whatever i can</li>
               <li>still thinking about that caleb williams throw…</li>
               <li>saving money for asap rocky, don toliver, and world cup games</li>
@@ -243,28 +238,14 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               some other things
             </p>
-            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-              <li>
-                coursework: data structures, algorithms, discrete math, structure of computer programs, a.i., machine learning, networking + internet protocols, database systems, computer vision, data science
-              </li>
-              <li>
-                languages: python, c++, typescript, java, sql
-              </li>
-              <li>
-                ml + systems: FSDP, AMP, CUDA, KV-cache, distributed fine-tuning, eval pipelines, quantization
-              </li>
-              <li>
-                frameworks: react, fastapi, spring boot, node.js, duckdb, langgraph, pytorch, xgboost
-              </li>
-              <li>
-                infra: aws, docker, redis, postgresql, postgis, gdal, arcgis pro, linux, ci/cd
-              </li>
-              <li>
-                interests: cities + public transportation, collecting old maps, tamil culture, soccer jerseys, geoguessr, chicago sports, all sorts of music
-              </li>
-              <li>
-                less frequently: south indian movies, home decor, sketching, online chess, sparkling water
-              </li>
+            <ul className="space-y-2">
+              <li>coursework: data structures, algorithms, discrete math, structure of computer programs, a.i., machine learning, networking + internet protocols, database systems, computer vision, data science</li>
+              <li>languages: python, c++, typescript, java, sql</li>
+              <li>ml + systems: FSDP, AMP, CUDA, KV-cache, distributed fine-tuning, eval pipelines, quantization</li>
+              <li>frameworks: react, fastapi, spring boot, node.js, duckdb, langgraph, pytorch, xgboost</li>
+              <li>infra: aws, docker, redis, postgresql, postgis, gdal, arcgis pro, linux, ci/cd</li>
+              <li>interests: cities + public transportation, collecting old maps, tamil culture, soccer jerseys, geoguessr, chicago sports, all sorts of music</li>
+              <li>less frequently: south indian movies, home decor, sketching, online chess, sparkling water</li>
             </ul>
           </section>
         </ScrollReveal>
@@ -275,12 +256,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
               other things
             </p>
-            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-              <li>used to watch anime a little bit</li>
-              <li>trying to learn to dj and cook (or both at the same time)</li>
-              <li>will run a marathon this year</li>
-              <li>decent at sketching</li>
-              <li>trying to attend more hackathons</li>
+            <ul className="space-y-2">
               <li>
                 roast my{' '}
                 <AnimatedLink
@@ -293,6 +269,22 @@ export default function Home() {
                 </AnimatedLink>
                 {' '}playlists
               </li>
+              <li>
+                i used to watch{' '}
+                <AnimatedLink
+                  href="https://anilist.co/user/vaibhavhariram/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--text-primary)] underline underline-offset-2 hover:opacity-80"
+                >
+                  anime
+                </AnimatedLink>
+                {' '}a bit
+              </li>
+              <li>trying to learn to dj and cook (or both at the same time)</li>
+              <li>will run a marathon this year</li>
+              <li>decent at sketching</li>
+              <li>trying to attend more hackathons</li>
             </ul>
           </section>
         </ScrollReveal>

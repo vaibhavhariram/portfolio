@@ -20,14 +20,15 @@ export default function AnimatedLink({
   className,
 }: AnimatedLinkProps) {
   return (
-    <motion.div
+    <motion.span
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      style={{ display: 'inline-block' }}
     >
       <Link href={href} target={target} rel={rel} className={className}>
         {children}
       </Link>
-    </motion.div>
+    </motion.span>
   );
 }
