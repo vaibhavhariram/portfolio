@@ -4,27 +4,34 @@ import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Projects & research — Atlas (multi-modal routing), FireGraph (real-time fire risk visualization), Crypto mining detection (Potts Lab, UC Berkeley).',
+  description: 'Projects & research — routeX (C++ routing engine), swandb (feature store), chronicle (LLM inference), Potts Lab (UC Berkeley).',
 };
 
 const projects = [
   {
-    title: 'Atlas – Predictive Multi-Modal Transportation Router',
-    description: 'Built routing engine processing 500K+ OpenStreetMap road segments, implementing Dijkstra, A*, and Contraction Hierarchies with graph preprocessing for consistent sub-100ms query latency. Developed ML traffic prediction model using XGBoost (92% accuracy on speed forecasting), reducing ETA error from 8 minutes to 3 minutes versus traditional static routing.',
-    tags: ['FastAPI', 'PostgreSQL', 'Redis', 'XGBoost', 'scikit-learn', 'Python'],
+    title: 'routeX – C++ Routing Engine',
+    description: 'Routing engine over 280K+ OSM road segments (Bay Area). A*, Dijkstra, and contraction hierarchies — CH preprocessing builds 40K+ shortcuts for <1ms queries (45x over Dijkstra). PostGIS spatial layer for geofencing. XGBoost ETA model validated at <15% MAPE on 5K held-out routes.',
+    tags: ['C++', 'PostGIS', 'XGBoost', 'OSM', 'Python'],
     github: undefined,
     demo: undefined,
   },
   {
-    title: 'FireGraph – Real-Time Risk Visualization',
-    description: 'Built public-facing real-time geospatial visualization platform combining live fire perimeters, wind vectors, and population density layers to surface high-risk evacuation corridors across California. Engineered data pipeline with updates from NIFC, CAL FIRE, and NOAA APIs every 5 minutes; 100K+ road segments with WebGL-accelerated mapping for smooth, interactive performance.',
-    tags: ['Next.js', 'Deck.gl', 'FastAPI', 'PostGIS', 'OpenRouteService', 'Vercel'],
+    title: 'swandb – Point-in-Time Feature Store',
+    description: 'Point-in-time feature store built for ML training correctness. DuckDB AsOf joins for offline retrieval, Redis online serving at <8ms p95. Idempotent ingestion, date-sharded parquet, per-tenant isolation.',
+    tags: ['DuckDB', 'Redis', 'Parquet', 'Python', 'FastAPI'],
     github: undefined,
     demo: undefined,
   },
   {
-    title: 'Crypto Mining Detection ML Model',
-    description: 'Potts Lab, UC Berkeley. Developing ML model to identify crypto mining developments in El Salvador using multi-spectral analysis (NDVI, NDWI, land surface temperature). Built change detection pipeline in Google Earth Engine processing satellite imagery across 5-year windows; Random Forest classification to isolate vegetation loss and thermal patterns.',
+    title: 'chronicle – LLM Inference Server',
+    description: 'Inference server for Mistral-7B fp16 on A10. 32% throughput gain over HF Transformers baseline via micro-batching with fairness flush and KV-cache reuse. <200ms p95 at 100 concurrency.',
+    tags: ['Python', 'CUDA', 'Mistral-7B', 'PyTorch'],
+    github: undefined,
+    demo: undefined,
+  },
+  {
+    title: 'Crypto Mining Detection (Potts Lab, UC Berkeley)',
+    description: 'ML model to identify crypto mining developments in El Salvador using multi-spectral analysis (NDVI, NDWI, land surface temperature). Change detection pipeline in Google Earth Engine processing satellite imagery across 5-year windows; Random Forest classification to isolate vegetation loss and thermal patterns.',
     tags: ['Google Earth Engine', 'Python', 'Landsat', 'Sentinel', 'Random Forest'],
     github: undefined,
     demo: undefined,
