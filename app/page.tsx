@@ -69,6 +69,12 @@ export default function Home() {
               >
                 resume
               </AnimatedLink>
+              <AnimatedLink
+                href="/blog"
+                className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+              >
+                blog
+              </AnimatedLink>
             </div>
           </section>
         </ScrollReveal>
