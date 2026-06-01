@@ -44,6 +44,15 @@ export default function Blog() {
             <ul className="divide-y divide-[var(--border)]">
               <li className="py-4">
                 <AnimatedLink
+                  href="/blog/world-cup-2026"
+                  className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+                >
+                  2026 world cup: claude&apos;s full predictions
+                </AnimatedLink>
+                <p className="text-[var(--text-muted)] text-xs mt-1">june 5, 2026</p>
+              </li>
+              <li className="py-4">
+                <AnimatedLink
                   href="/blog/fulfilment"
                   className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
                 >
