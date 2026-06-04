@@ -62,14 +62,6 @@ export default function Home() {
                 linkedin
               </AnimatedLink>
               <AnimatedLink
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
-              >
-                resume
-              </AnimatedLink>
-              <AnimatedLink
                 href="/blog"
                 className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
               >
@@ -268,18 +260,6 @@ export default function Home() {
               <li>been to 30+ countries and my dream is to visit every single one</li>
               <li>have listened to 500 rap/rnb albums and will give better takes than anyone on the new releases</li>
             </ul>
-          </section>
-        </ScrollReveal>
-
-        {/* TL;DR */}
-        <ScrollReveal delay={0.6}>
-          <section className="space-y-3">
-            <p className="text-xs tracking-[0.25em] text-[var(--text-muted)] uppercase">
-              tl;dr
-            </p>
-            <p className="leading-relaxed">
-              i love AI and its applications across the entire stack. benchmarks, evals, observability, runtime, and its real time applications in the startup space is what i aim to understand perfectly one day. oh, and i love geospatial ai/ml + geotech: real systems people actually use
-            </p>
           </section>
         </ScrollReveal>
 
