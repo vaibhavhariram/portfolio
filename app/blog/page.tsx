@@ -44,6 +44,15 @@ export default function Blog() {
             <ul className="divide-y divide-[var(--border)]">
               <li className="py-4">
                 <AnimatedLink
+                  href="/blog/environmental-conditioning"
+                  className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
+                >
+                  environmental conditioning
+                </AnimatedLink>
+                <p className="text-[var(--text-muted)] text-xs mt-1">issue 002 — june 10, 2026</p>
+              </li>
+              <li className="py-4">
+                <AnimatedLink
                   href="/blog/world-cup-2026"
                   className="underline underline-offset-2 hover:text-[var(--text-primary)] transition-colors"
                 >
