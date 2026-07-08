@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-import { ThemeProvider } from "@/components/ThemeContext";
+import { Old_Standard_TT } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
-  variable: "--font-sans",
+const oldStandard = Old_Standard_TT({
+  variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Vaibhav Hariram",
-  description: "Building the next frontier of dev tools. CS @ Berkeley. LLM + geospatial research.",
+  description:
+    "CS & Geography @ UC Berkeley. Building AI systems people can trust—Intel, BAIR/Gorilla BFCL, Shana.",
   openGraph: {
     title: "Vaibhav Hariram",
-    description: "Building the next frontier of dev tools. CS @ Berkeley.",
+    description: "CS & Geography @ UC Berkeley. AI/ML engineering & research.",
     type: "website",
   },
 };
@@ -27,11 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} font-sans antialiased`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
-      </body>
+      <body className={`${oldStandard.variable} antialiased`}>{children}</body>
     </html>
   );
 }

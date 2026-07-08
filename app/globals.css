@@ -1,24 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #000000;
-  --text-primary: #ffffff;
-  --text-secondary: #ffffff;
-  --text-muted: #a0a0a0;
-  --border: #2a2a2f;
-}
-
-html[data-theme="light"] {
-  --bg-primary: #ffffff;
-  --text-primary: #0a0a0f;
-  --text-secondary: #0a0a0f;
-  --text-muted: #666666;
-  --border: #e0e0e0;
+  --paper-bg: #f8f6f1;
+  --ink: #1c1c1c;
+  --ink-muted: #3d3d3d;
+  --rule: #c4c0b8;
 }
 
 @theme inline {
-  --color-bg-primary: var(--bg-primary);
-  --color-border: var(--border);
+  --color-paper: var(--paper-bg);
+  --color-ink: var(--ink);
 }
 
 * {
@@ -29,15 +20,40 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-sans), system-ui, sans-serif;
-  line-height: 1.6;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font-family: var(--font-serif), "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.latex-section {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 0.95em;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
+}
+
+.latex-link {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-muted);
+}
+
+.latex-link:hover {
+  border-bottom-color: var(--ink);
+}
+
+.writing-prose {
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.75;
 }

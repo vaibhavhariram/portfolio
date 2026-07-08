@@ -24,14 +24,16 @@ export default function Typewriter({
   onComplete,
 }: TypewriterProps) {
   const [displayLength, setDisplayLength] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
+  const [isComplete, setIsComplete] = useState(text.length === 0);
   const [cursorVisible, setCursorVisible] = useState(true);
   const onCompleteRef = useRef(onComplete);
-  onCompleteRef.current = onComplete;
+
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
     if (text.length === 0) {
-      setIsComplete(true);
       onCompleteRef.current?.();
       return;
     }
