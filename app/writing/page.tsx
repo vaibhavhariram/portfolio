@@ -3,6 +3,11 @@ import WritingShell from "@/components/WritingShell";
 
 const posts = [
   {
+    slug: "moving-on",
+    title: "At What Point Do You Move On From a Place?",
+    date: "Issue 004 — Summer 2026",
+  },
+  {
     slug: "dissecting-san-francisco",
     title: "Dissecting San Francisco",
     date: "Issue 003 — June 21, 2026",
