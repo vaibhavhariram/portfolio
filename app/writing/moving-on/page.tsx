@@ -10,7 +10,7 @@ export default function MovingOn() {
 
           <section className="space-y-2">
             <p className="text-[14px] tracking-[0.25em] text-[var(--ink-muted)]">
-              Issue 004 — July 12, 2026
+              Issue 004 — July 13, 2026
             </p>
             <h1 className="text-[var(--ink)] text-[2rem] font-normal tracking-tight">
               At What Point Do You Move On From a Place?
@@ -66,7 +66,7 @@ export default function MovingOn() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">I — The Loneliness Nobody Warns You About</p>
-              <h2 className="text-[var(--ink)] text-[18px]">Everything Is Different</h2>
+              <h2 className="text-[var(--ink)] text-[18px] font-medium">Everything Is Different</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -98,7 +98,7 @@ export default function MovingOn() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">II — A Different Kind of Destination</p>
-              <h2 className="text-[var(--ink)] text-[18px]">Permission to Let Go</h2>
+              <h2 className="text-[var(--ink)] text-[18px] font-medium">Permission to Let Go</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -133,7 +133,7 @@ export default function MovingOn() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">III — Maturing About a Place</p>
-              <h2 className="text-[var(--ink)] text-[18px]">When Damage Is Already Done</h2>
+              <h2 className="text-[var(--ink)] text-[18px] font-medium">When Damage Is Already Done</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -177,17 +177,19 @@ export default function MovingOn() {
         {/* image section */}
 
           <section className="border-t border-[var(--rule)] pt-6">
-            <div className="relative w-full aspect-square overflow-hidden border border-[var(--rule)] mb-4">
+            <div className="relative w-full aspect-square overflow-hidden border border-[var(--rule)]">
               <Image
                 src="/images/halloween-2010.png"
                 alt="Halloween 2010, first memory in NC with my dad"
                 fill
                 className="object-cover object-top"
               />
+              <div className="absolute bottom-0 left-0 right-0 px-3 py-2 bg-gradient-to-t from-black/60 to-transparent">
+                <p className="text-[13px] tracking-[0.15em] text-white/80 italic">
+                  Halloween 2010. First one on record.
+                </p>
+              </div>
             </div>
-            <p className="text-xs text-[var(--text-muted)] italic">
-              Halloween 2010. First one on record.
-            </p>
           </section>
 
 
