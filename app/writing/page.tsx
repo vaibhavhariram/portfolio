@@ -5,7 +5,7 @@ const posts = [
   {
     slug: "moving-on",
     title: "At What Point Do You Move On From a Place?",
-    date: "Issue 004 — Summer 2026",
+    date: "Issue 004 — July 13, 2026",
   },
   {
     slug: "dissecting-san-francisco",
