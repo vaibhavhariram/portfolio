@@ -10,7 +10,7 @@ export default function MovingOn() {
 
           <section className="space-y-2">
             <p className="text-[14px] tracking-[0.25em] text-[var(--ink-muted)]">
-              Issue 004 — Summer 2026
+              Issue 004 — July 12, 2026
             </p>
             <h1 className="text-[var(--ink)] text-[2rem] font-normal tracking-tight">
               At What Point Do You Move On From a Place?
@@ -182,7 +182,7 @@ export default function MovingOn() {
                 src="/images/halloween-2010.png"
                 alt="Halloween 2010, first memory in NC with my dad"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-top"
               />
             </div>
             <p className="text-xs text-[var(--text-muted)] italic">
