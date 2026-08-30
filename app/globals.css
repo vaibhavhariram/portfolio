@@ -28,10 +28,15 @@ body {
 body {
   background: var(--paper-bg);
   color: var(--ink);
-  font-family: var(--font-serif), "Times New Roman", serif;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   font-size: 19px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  font-family: var(--font-serif), "Times New Roman", serif;
 }
 
 .latex-section {

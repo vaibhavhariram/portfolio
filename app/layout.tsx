@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Old_Standard_TT } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const oldStandard = Old_Standard_TT({
+const instrumentSerif = Instrument_Serif({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: "400",
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${oldStandard.variable} antialiased`}>{children}</body>
+      <body className={`${instrumentSerif.variable} antialiased`}>{children}</body>
     </html>
   );
 }

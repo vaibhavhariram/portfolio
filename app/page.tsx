@@ -1,5 +1,6 @@
 import ContactLinks from "@/components/ContactLinks";
 import DesignNav from "@/components/DesignNav";
+import AnimatedLink from "@/components/AnimatedLink";
 
 export default function Home() {
   return (
@@ -16,104 +17,79 @@ export default function Home() {
 
         <div className="space-y-5 text-[18px] md:text-[19px] leading-[1.75] text-[var(--ink)]">
           <p>
-            CS and Geography at Berkeley. I spend most of my time teaching AI
-            systems to know when they&apos;re wrong. Turn out that&apos;s the
-            hard part, not the being-smart part.
+            CS and Geography at Berkeley. Most of my work sits on the
+            correctness side of AI systems: evals, validation, and the tooling
+            that tells you when a model is wrong. That turns out to be harder
+            than making it smart.
           </p>
 
           <p>
-            Right now I&apos;m at Intel doing AI and ML engineering on PMC
-            &amp; Firmware Validation, building Shana: immigration guidance for
-            F-1/OPT/H-1B holders that doesn&apos;t require a lawyer just to
-            understand the first form, and doing research with Berkeley RISE
-            Lab&apos;s{" "}
-            <a
+            I&apos;m on leave from school this fall, working at Intel on AI/ML
+            engineering for validation. This past summer I was there on power
+            management controller and firmware validation, mostly pre-silicon.
+          </p>
+
+          <p>
+            Within geography, I tend to specialize in spatial machine learning
+            and computational geoinformatics: routing algorithms, GIS pipelines,
+            and how models represent physical space in the first place. Spatial
+            intelligence is the direction I think matters most in AI right now.
+            World models and physical AI are where I want my work to end up.
+          </p>
+
+          <p>
+            I also care about consumer software, and about applying AI to social
+            problems people actually run into. Immigration is the one I&apos;ve
+            spent the most time on, with a few others I&apos;m working toward.
+          </p>
+
+          <p>
+            Before this: research with Berkeley RISE Lab&apos;s{" "}
+            <AnimatedLink
               href="https://gorilla.cs.berkeley.edu/leaderboard.html"
               target="_blank"
               rel="noopener noreferrer"
               className="latex-link"
             >
               Gorilla
-            </a>{" "}
-            Project on function-calling evals. If a benchmark&apos;s ever told
-            you your model&apos;s tool-use is bad, that might be part of my
-            work.
-          </p>
-
-          <p>
-            Before this:{" "}
-            <a
+            </AnimatedLink>{" "}
+            project on function-calling evals, so if a benchmark has ever told
+            you your model&apos;s tool use is bad, some of that was my work.{" "}
+            <AnimatedLink
               href="https://usepaprika.co"
               target="_blank"
               rel="noopener noreferrer"
               className="latex-link"
             >
               Paprika
-            </a>
+            </AnimatedLink>
             , a runtime policy and replay system for AI agents, running with 25+
-            teams now. Some infra work at{" "}
-            <a
+            teams now. Infra automating B2B content at{" "}
+            <AnimatedLink
               href="https://flywheelos.com"
               target="_blank"
               rel="noopener noreferrer"
               className="latex-link"
             >
               Flywheel
-            </a>
-            . A few PRs into{" "}
-            <a
-              href="https://github.com/vllm-project/vllm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="latex-link"
-            >
-              vLLM
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://github.com/pytorch/ao"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="latex-link"
-            >
-              PyTorch
-            </a>
-            , not all of them made it — that&apos;s fine. Started out doing GIS
-            software work at{" "}
-            <a
+            </AnimatedLink>
+            . I started on location management software at{" "}
+            <AnimatedLink
               href="https://public.railinc.com/products-services/location_management"
               target="_blank"
               rel="noopener noreferrer"
               className="latex-link"
             >
               Railinc
-            </a>
-            , which is where the map obsession actually comes from.
+            </AnimatedLink>
+            , which is where all of the spatial work comes from.
           </p>
 
           <p>
-            Outside of that- I collect old maps and jerseys, sketch when
-            I&apos;m patient, take too many photos of skylines, and watch Chelsea
-            find new ways to disappoint me every week. Also deep into all types
-            of{" "}
-            <a
-              href="https://open.spotify.com/user/y1b8q06v7nfj7vycxi4huo70u"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="latex-link"
-            >
-              music
-            </a>
-            , k-dramas and{" "}
-            <a
-              href="https://anilist.co/user/vaibhavhariram/animelist"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="latex-link"
-            >
-              anime
-            </a>
-            .
+            Recently: I&apos;ve been getting into k-pop, looking forward to
+            watching Chelsea disappoint me again this season, and getting back
+            into seasonal anime. Planning a trip to Central Asia and convincing
+            my roommates to get a cat for the apartment are also in the works.
           </p>
 
           <p>Talk to me about any of it, anytime.</p>
