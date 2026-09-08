@@ -3,6 +3,11 @@ import WritingShell from "@/components/WritingShell";
 
 const posts = [
   {
+    slug: "the-verifier-is-the-product",
+    title: "The Verifier Is The Product",
+    date: "Issue 005 — September 8, 2026",
+  },
+  {
     slug: "moving-on",
     title: "At What Point Do You Move On From a Place?",
     date: "Issue 004 — July 13, 2026",
