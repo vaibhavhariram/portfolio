@@ -12,7 +12,7 @@ export default function MovingOn() {
             <p className="text-[14px] tracking-[0.25em] text-[var(--ink-muted)]">
               Issue 004 — July 13, 2026
             </p>
-            <h1 className="text-[var(--ink)] text-[2rem] font-normal tracking-tight">
+            <h1 className="text-[var(--ink)] text-[2rem] font-bold tracking-tight">
               At What Point Do You Move On From a Place?
             </h1>
             <p className="text-[var(--ink-muted)] text-[14px]">
@@ -66,7 +66,7 @@ export default function MovingOn() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">I — The Loneliness Nobody Warns You About</p>
-              <h2 className="text-[var(--ink)] text-[18px] font-medium">Everything Is Different</h2>
+              <h2 className="text-[var(--ink)] text-[1.6rem] md:text-[1.75rem] font-bold">Everything Is Different</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -98,7 +98,7 @@ export default function MovingOn() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">II — A Different Kind of Destination</p>
-              <h2 className="text-[var(--ink)] text-[18px] font-medium">Permission to Let Go</h2>
+              <h2 className="text-[var(--ink)] text-[1.6rem] md:text-[1.75rem] font-bold">Permission to Let Go</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -133,7 +133,7 @@ export default function MovingOn() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">III — Maturing About a Place</p>
-              <h2 className="text-[var(--ink)] text-[18px] font-medium">When Damage Is Already Done</h2>
+              <h2 className="text-[var(--ink)] text-[1.6rem] md:text-[1.75rem] font-bold">When Damage Is Already Done</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">

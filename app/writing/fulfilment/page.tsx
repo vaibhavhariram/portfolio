@@ -12,8 +12,8 @@ export default function Fulfilment() {
             <p className="text-[14px] tracking-[0.25em] text-[var(--ink-muted)]">
               Issue 001 — May 28, 2026
             </p>
-            <h1 className="text-[var(--ink)] text-[2rem] font-normal tracking-tight">
-              Fulfil<span className="italic">fil</span>ment
+            <h1 className="text-[var(--ink)] text-[2rem] font-bold tracking-tight">
+              Fulfillment
             </h1>
             <p className="text-[var(--ink-muted)] text-[14px]">
               One L or Two — and Everything in Between
@@ -70,7 +70,7 @@ export default function Fulfilment() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">I — The American Spelling</p>
-              <h2 className="text-[var(--ink)] text-[18px]">Fulfilment</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">Fulfilment</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -124,7 +124,7 @@ export default function Fulfilment() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">II — The British Spelling</p>
-              <h2 className="text-[var(--ink)] text-[18px]">Fulfillment</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">Fulfillment</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -191,7 +191,7 @@ export default function Fulfilment() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">III — What It Actually Means</p>
-              <h2 className="text-[var(--ink)] text-[18px]">Alignment</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">Alignment</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">

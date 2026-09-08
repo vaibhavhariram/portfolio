@@ -11,7 +11,7 @@ export default function DissectingSanFrancisco() {
             <p className="text-[14px] tracking-[0.25em] text-[var(--ink-muted)]">
               Issue 003 — June 21, 2026
             </p>
-            <h1 className="text-[var(--ink)] text-[2rem] font-normal tracking-tight">
+            <h1 className="text-[var(--ink)] text-[2rem] font-bold tracking-tight">
               Dissecting San Francisco
             </h1>
             <p className="text-[var(--ink-muted)] text-[14px]">
@@ -95,7 +95,7 @@ export default function DissectingSanFrancisco() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">I — What SF Actually Is</p>
-              <h2 className="text-[var(--ink)] text-[18px] font-medium">The Multiplier Problem</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">The Multiplier Problem</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -136,7 +136,7 @@ export default function DissectingSanFrancisco() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">II — Cost-Benefit Analysis</p>
-              <h2 className="text-[var(--ink)] text-[18px] font-medium">Burning Runway on Status</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">Burning Runway on Status</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -172,7 +172,7 @@ export default function DissectingSanFrancisco() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">III — What the City Speaks to You</p>
-              <h2 className="text-[var(--ink)] text-[18px] font-medium">The Quiet Is a Competitive Advantage</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">The Quiet Is a Competitive Advantage</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -220,7 +220,7 @@ export default function DissectingSanFrancisco() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">IV — The Real Timeline</p>
-              <h2 className="text-[var(--ink)] text-[18px] font-medium">Stage Determines Strategy</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">Stage Determines Strategy</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -273,7 +273,7 @@ export default function DissectingSanFrancisco() {
           <section className="border-t border-[var(--rule)] pt-6 space-y-4">
             <div className="space-y-1 pb-2">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">V — The Real Dream</p>
-              <h2 className="text-[var(--ink)] text-[18px] font-medium">Make It a Consequence</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">Make It a Consequence</h2>
             </div>
             <p className="leading-relaxed">
               Don&apos;t find an excuse to come to SF. Build something so solid, so technically sound, or

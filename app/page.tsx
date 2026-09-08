@@ -1,10 +1,11 @@
 import ContactLinks from "@/components/ContactLinks";
-import DesignNav from "@/components/DesignNav";
 import AnimatedLink from "@/components/AnimatedLink";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <DarkModeToggle />
       <article className="max-w-[52rem] mx-auto w-full px-10 md:px-20 py-10 md:py-16">
         <header className="mb-8 pb-5 border-b border-[var(--rule)]">
           <h2 className="latex-section mt-0 mb-2">Links</h2>
@@ -96,8 +97,9 @@ export default function Home() {
         </div>
 
         <footer className="mt-10 pt-6 border-t border-[var(--rule)]">
-          <h2 className="latex-section mt-0 mb-2">Design</h2>
-          <DesignNav />
+          <nav className="text-[16px] md:text-[17px] leading-relaxed">
+            <a href="/writing" className="latex-link">Writing</a>
+          </nav>
         </footer>
       </article>
     </main>

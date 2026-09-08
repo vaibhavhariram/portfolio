@@ -7,6 +7,13 @@
   --rule: #c4c0b8;
 }
 
+html[data-theme="dark"] {
+  --paper-bg: #1a1a1a;
+  --ink: #e8e6e1;
+  --ink-muted: #a8a8a8;
+  --rule: #3a3a3a;
+}
+
 @theme inline {
   --color-paper: var(--paper-bg);
   --color-ink: var(--ink);
@@ -28,15 +35,16 @@ body {
 body {
   background: var(--paper-bg);
   color: var(--ink);
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-roboto), 'Roboto', sans-serif;
   font-size: 19px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
 h2 {
-  font-family: var(--font-serif), "Times New Roman", serif;
+  font-family: var(--font-roboto), 'Roboto', sans-serif;
 }
 
 .latex-section {

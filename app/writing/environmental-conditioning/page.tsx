@@ -11,7 +11,7 @@ export default function EnvironmentalConditioning() {
             <p className="text-[14px] tracking-[0.25em] text-[var(--ink-muted)]">
               Issue 002 — June 10, 2026
             </p>
-            <h1 className="text-[var(--ink)] text-[2rem] font-normal tracking-tight">
+            <h1 className="text-[var(--ink)] text-[2rem] font-bold tracking-tight">
               Environmental Conditioning
             </h1>
             <p className="text-[var(--ink-muted)] text-[14px]">
@@ -48,7 +48,7 @@ export default function EnvironmentalConditioning() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">I — Osmosis</p>
-              <h2 className="text-[var(--ink)] text-[18px]">The Room Decides</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">The Room Decides</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -85,7 +85,7 @@ export default function EnvironmentalConditioning() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">II — Elsewhere</p>
-              <h2 className="text-[var(--ink)] text-[18px]">Any Other Room on Earth</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">Any Other Room on Earth</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -124,7 +124,7 @@ export default function EnvironmentalConditioning() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">III — Before the Noise</p>
-              <h2 className="text-[var(--ink)] text-[18px]">The Pre-Environment Self</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">The Pre-Environment Self</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">
@@ -158,7 +158,7 @@ export default function EnvironmentalConditioning() {
           <section className="space-y-4">
             <div className="border-t border-[var(--rule)] pt-6 space-y-1">
               <p className="text-[14px] tracking-[0.2em] text-[var(--ink-muted)]">IV — The Honest Answer</p>
-              <h2 className="text-[var(--ink)] text-[18px]">All of It Is Real</h2>
+              <h2 className="text-[var(--ink)] text-[1.4rem] font-bold">All of It Is Real</h2>
             </div>
 
             <div className="leading-relaxed space-y-4">

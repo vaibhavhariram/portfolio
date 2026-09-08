@@ -19,11 +19,7 @@ const posts = [
   },
   {
     slug: "fulfilment",
-    title: (
-      <>
-        Fulfil<span className="italic">fil</span>ment
-      </>
-    ),
+    title: "Fulfillment",
     date: "Issue 001 — May 28, 2026",
   },
 ];
