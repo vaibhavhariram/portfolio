@@ -3,6 +3,11 @@ import WritingShell from "@/components/WritingShell";
 
 const posts = [
   {
+    slug: "scums-wish",
+    title: "Wanting Someone Isn't Loving Them",
+    date: "Issue 007 — November 19, 2026",
+  },
+  {
     slug: "the-graduation-paradox",
     title: "The Graduation Paradox",
     date: "Issue 006 — September 27, 2026",
