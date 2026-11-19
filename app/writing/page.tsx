@@ -5,7 +5,7 @@ const posts = [
   {
     slug: "the-graduation-paradox",
     title: "The Graduation Paradox",
-    date: "Issue 006 — September 2026",
+    date: "Issue 006 — September 27, 2026",
   },
   {
     slug: "the-verifier-is-the-product",

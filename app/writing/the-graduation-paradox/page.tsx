@@ -9,7 +9,7 @@ export default function TheGraduationParadox() {
 
           <section className="space-y-2">
             <p className="text-[14px] tracking-[0.25em] text-[var(--ink-muted)]">
-              Issue 006 — September 2026
+              Issue 006 — September 27, 2026
             </p>
             <h1 className="text-[var(--ink)] text-[2rem] font-bold tracking-tight">
               The Graduation Paradox
