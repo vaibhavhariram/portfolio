@@ -3,9 +3,11 @@ import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 
 // Fallback for glyphs LTA Identity lacks (em dash, @, accented letters, ...).
+// Medium only, so fallback glyphs match LTA Identity's single weight even in bold text.
 const fallback = Inter_Tight({
   variable: "--font-fallback",
   subsets: ["latin"],
+  weight: "500",
   display: "swap",
 });
 
