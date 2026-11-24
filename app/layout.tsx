@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+// Fallback for glyphs LTA Identity lacks (em dash, @, accented letters, ...).
+const fallback = Inter_Tight({
+  variable: "--font-fallback",
   subsets: ["latin"],
-  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -34,7 +34,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${roboto.variable} antialiased`}>{children}</body>
+      <body className={`${fallback.variable} antialiased`}>{children}</body>
     </html>
   );
 }

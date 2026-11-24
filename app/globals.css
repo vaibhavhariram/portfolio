@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "LTA Identity";
+  src: url("/fonts/LTAIdentity-Medium.woff2") format("woff2"),
+       url("/fonts/LTAIdentity-Medium.woff") format("woff"),
+       url("/fonts/LTAIdentity-Medium.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --paper-bg: #f8f6f1;
   --ink: #1c1c1c;
@@ -17,6 +27,9 @@ html[data-theme="dark"] {
 @theme inline {
   --color-paper: var(--paper-bg);
   --color-ink: var(--ink);
+  --font-sans: "LTA Identity", var(--font-fallback), Arial, sans-serif;
+  --font-mono: "LTA Identity", var(--font-fallback), Arial, sans-serif;
+  --font-serif: "LTA Identity", var(--font-fallback), Arial, sans-serif;
 }
 
 * {
@@ -35,7 +48,8 @@ body {
 body {
   background: var(--paper-bg);
   color: var(--ink);
-  font-family: var(--font-roboto), 'Roboto', sans-serif;
+  font-family: "LTA Identity", var(--font-fallback), Arial, sans-serif;
+  font-synthesis: none;
   font-size: 19px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -44,7 +58,7 @@ body {
 
 h1,
 h2 {
-  font-family: var(--font-roboto), 'Roboto', sans-serif;
+  font-family: "LTA Identity", var(--font-fallback), Arial, sans-serif;
 }
 
 .latex-section {
