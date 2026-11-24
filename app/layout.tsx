@@ -14,10 +14,11 @@ const fallback = Inter_Tight({
 export const metadata: Metadata = {
   title: "Vaibhav Hariram",
   description:
-    "CS & Geography @ UC Berkeley. Building AI systems people can trust—Intel, BAIR/Gorilla BFCL, Shana.",
+    "Second-year at UC Berkeley studying Computer Science and Geography. Applied AI and systems, plus geospatial applications. Building Jude.",
   openGraph: {
     title: "Vaibhav Hariram",
-    description: "CS & Geography @ UC Berkeley. AI/ML engineering & research.",
+    description:
+      "Second-year at UC Berkeley studying Computer Science and Geography. Applied AI and systems, plus geospatial applications. Building Jude.",
     type: "website",
   },
 };
