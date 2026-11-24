@@ -1,6 +1,20 @@
+import type { ReactNode } from "react";
 import ContactLinks from "@/components/ContactLinks";
 import AnimatedLink from "@/components/AnimatedLink";
 import DarkModeToggle from "@/components/DarkModeToggle";
+
+function Ext({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <AnimatedLink
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="latex-link"
+    >
+      {children}
+    </AnimatedLink>
+  );
+}
 
 export default function Home() {
   return (
@@ -18,82 +32,57 @@ export default function Home() {
 
         <div className="space-y-5 text-[18px] md:text-[19px] leading-[1.75] text-[var(--ink)]">
           <p>
-            CS and Geography at Berkeley. Most of my work sits on the
-            correctness side of AI systems: evals, validation, and the tooling
-            that tells you when a model is wrong. That turns out to be harder
-            than making it smart.
+            Hi! I&apos;m Vaibhav, a second-year at UC Berkeley studying Computer
+            Science and Geography, with a minor in Data Science. I work on
+            applied AI and systems, plus geospatial applications.
           </p>
 
           <p>
-            I&apos;m on leave from school this fall, working at Intel on AI/ML
-            engineering for validation. This past summer I was there on power
+            Right now I&apos;m building{" "}
+            <Ext href="https://judelabs.xyz">Jude</Ext>: System 1 models that
+            companies own, trained on every decision they&apos;ve already made.
+            This past summer I was an AI/ML intern at{" "}
+            <Ext href="https://intel.com">Intel</Ext>, working on power
             management controller and firmware validation, mostly pre-silicon.
           </p>
 
           <p>
-            Within geography, I tend to specialize in spatial machine learning
-            and computational geoinformatics: routing algorithms, GIS pipelines,
-            and how models represent physical space in the first place. Spatial
-            intelligence is the direction I think matters most in AI right now.
-            World models and physical AI are where I want my work to end up.
+            Before that, I worked on optimization problems at a{" "}
+            <Ext href="https://en.wikipedia.org/wiki/Combinatorial_explosion">
+              stealth defense startup
+            </Ext>
+            ; did function-calling evals research at Berkeley&apos;s{" "}
+            <Ext href="https://gorilla.cs.berkeley.edu/leaderboard.html">
+              Sky Computing Lab
+            </Ext>{" "}
+            under Prof. Joey Gonzalez; built{" "}
+            <Ext href="https://usepaprika.co">Paprika</Ext>, a runtime policy
+            and replay system for AI agents; was a founding engineer at{" "}
+            <Ext href="https://flywheelos.com">Flywheel</Ext>, building infra
+            that automates B2B content; and was a GIS software engineering
+            intern at <Ext href="https://railinc.com">Railinc</Ext>, building
+            software for the freight rail industry.
           </p>
 
           <p>
-            I also care about consumer software, and about applying AI to social
-            problems people actually run into. Immigration is the one I&apos;ve
-            spent the most time on, with a few others I&apos;m working toward.
+            Outside of work: I love{" "}
+            <Ext href="https://anilist.co/user/vaibhavhariram/animelist">
+              anime
+            </Ext>
+            , K-dramas, South Indian movies, thrifting,{" "}
+            <Ext href="https://open.spotify.com/user/y1b8q06v7nfj7vycxi4huo70u">
+              music
+            </Ext>
+            , sketching,{" "}
+            <Ext href="https://www.fotmob.com/teams/8455/fixtures/chelsea">
+              Chelsea F.C.
+            </Ext>
+            , and{" "}
+            <Ext href="https://en.wikipedia.org/wiki/Sports_in_Chicago">
+              Chicago sports
+            </Ext>
+            . I&apos;ve been to nearly 50 countries.
           </p>
-
-          <p>
-            Before this: research with Berkeley RISE Lab&apos;s{" "}
-            <AnimatedLink
-              href="https://gorilla.cs.berkeley.edu/leaderboard.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="latex-link"
-            >
-              Gorilla
-            </AnimatedLink>{" "}
-            project on function-calling evals, so if a benchmark has ever told
-            you your model&apos;s tool use is bad, some of that was my work.{" "}
-            <AnimatedLink
-              href="https://usepaprika.co"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="latex-link"
-            >
-              Paprika
-            </AnimatedLink>
-            , a runtime policy and replay system for AI agents, running with 25+
-            teams now. Infra automating B2B content at{" "}
-            <AnimatedLink
-              href="https://flywheelos.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="latex-link"
-            >
-              Flywheel
-            </AnimatedLink>
-            . I started on location management software at{" "}
-            <AnimatedLink
-              href="https://public.railinc.com/products-services/location_management"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="latex-link"
-            >
-              Railinc
-            </AnimatedLink>
-            , which is where all of the spatial work comes from.
-          </p>
-
-          <p>
-            Recently: I&apos;ve been getting into k-pop, looking forward to
-            watching Chelsea disappoint me again this season, and getting back
-            into seasonal anime. Planning a trip to Central Asia and convincing
-            my roommates to get a cat for the apartment are also in the works.
-          </p>
-
-          <p>Talk to me about any of it, anytime.</p>
         </div>
 
         <footer className="mt-10 pt-6 border-t border-[var(--rule)]">
