@@ -84,3 +84,77 @@ h2 {
   font-size: 18px;
   line-height: 1.75;
 }
+
+/* Theme toggle: outline sun and moon that swap with a turn. */
+.theme-toggle {
+  transition: border-color 0.3s ease, background-color 0.3s ease,
+    color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--ink-muted);
+}
+
+.theme-toggle:active {
+  transform: scale(0.92);
+}
+
+.theme-toggle:focus-visible {
+  outline: 1.5px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.theme-toggle-icon {
+  overflow: visible;
+}
+
+.theme-toggle-sun,
+.theme-toggle-moon,
+.theme-toggle-ray {
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+}
+
+.theme-toggle-sun,
+.theme-toggle-moon {
+  transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1),
+    opacity 0.25s ease;
+}
+
+.theme-toggle-ray {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.2s ease;
+}
+
+.theme-toggle[data-mode="dark"] .theme-toggle-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+}
+
+.theme-toggle[data-mode="light"] .theme-toggle-sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+}
+
+.theme-toggle[data-mode="light"] .theme-toggle-ray {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.theme-toggle[data-mode="dark"]:hover .theme-toggle-sun {
+  transform: rotate(45deg);
+}
+
+.theme-toggle[data-mode="light"]:hover .theme-toggle-moon {
+  transform: rotate(-12deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle-sun,
+  .theme-toggle-moon,
+  .theme-toggle-ray {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
